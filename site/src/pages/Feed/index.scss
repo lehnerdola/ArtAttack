@@ -1,0 +1,170 @@
+.ma{
+    background-color: #f8e8ee;
+
+}
+
+.container1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #f8e8ee;
+}
+
+.container2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+    background-color: #f8e8ee;
+
+}
+
+.container4{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5em;
+    justify-content: center;
+    background-color: #f8e8ee;
+
+}
+
+.sub1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+
+.sub1-3{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.img0{
+    width: 20em;
+    height: 15em;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.bo1{
+    text-align: center;
+    background-color: #BFCDFE;
+    border: 1px solid #4c73ff;
+    height: 2em;
+    width: 5em;
+    border-radius: 30px;
+}
+
+.b1-txt{
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 0.2em;
+    margin-left: 0.2em;
+    font-family: 'attack7';
+}
+
+.txt1{
+    text-align: center;
+    font-family: 'attack5';
+    }
+
+.txt2{
+    text-align: center;
+    margin-top: 0.9em;
+    margin-left: 5px;
+    font-family: 'attack7';
+}
+
+.star{
+    width: 2em;
+}
+
+.sub-1-4{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.imgusuario{
+    border-radius: 50px;
+    width: 2em;
+}
+
+.imgperfil{
+    width: 3em;
+    border-radius: 30px;
+}
+
+.busca{
+    margin-top: 1em;
+    width: 25em;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    font-family: 'attack11';
+}
+
+
+
+@font-face {
+    font-family:'attack1';
+    src: url(../../../public/fonts/FontsFree-Net-Narziss1.ttf);
+}
+
+@font-face {
+    font-family:'attack2' ;
+    src: url(../../../public/fonts/Butler_Black_Stencil.otf);
+}
+
+@font-face {
+    font-family:'attack3' ;
+    src: url(../../../public/fonts/Butler_Regular_Stencil.otf);
+}
+
+@font-face {
+    font-family:'attack4' ;
+    src: url(../../../public/fonts/Butler_Medium_Stencil.otf);
+}
+
+
+@font-face {
+    font-family:'attack5' ;
+    src: url(../../../public/fonts/Butler_Bold_Stencil.otf);
+}
+
+@font-face {
+    font-family:'attack6' ;
+    src: url(../../../public/fonts/KoHo-Regular.ttf);
+}
+
+@font-face {
+    font-family:'attack7' ;
+    src: url(../../../public/fonts/KoHo-Medium.ttf);
+}
+
+@font-face {
+    font-family:'attack8' ;
+    src: url(../../../public/fonts/KoHo-Bold.ttf);
+}
+
+@font-face {
+    font-family: 'attack9';
+    src: url(../../../public/fonts/Attacks3.woff2);
+}
+
+@font-face {
+    font-family: 'attack10';
+    src: url(../../../public/fonts/Attacks1.woff2);
+}
+
+@font-face {
+    font-family: 'attack11';
+    src: url(../../../public/fonts/Attacks4.woff2);
+}

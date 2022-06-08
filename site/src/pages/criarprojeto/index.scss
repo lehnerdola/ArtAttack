@@ -1,0 +1,117 @@
+.ma4{
+    background-color: #fedfcb;
+}
+
+.bot1-txt{
+    color: white;
+    text-align: center;
+    font-family: 'attack11';
+    margin-top: -0.1em;
+    font-size: 15px;
+}
+
+.btao1{
+    background-color: #BFCDFE;
+    border: 1px solid #4c73ff;
+    height: 1em;
+    padding: 12px;
+    width: 3em;
+    border-radius: 30px;
+    font-family: 'Attack-3';
+}
+
+.titulo-1-1{
+    font-family: 'attack2';
+    font-size: 30px;
+}
+
+.titulo1{
+    font-family: 'attack3';
+}
+
+.cont-1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cont-2{
+    display: flex;
+    flex-direction: row;
+    background-color: #fff;
+    justify-content: space-around;
+    width: 80em;
+    margin-left: 3em;
+    border-radius: 20px;
+    margin-top: 4em;
+}
+
+.subcont-1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.descricao{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.maxwidth {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 2.5em;
+
+}
+
+
+.textocont{
+    text-align: center;
+    margin-left: 0.1em;
+    font-family: 'attack11';
+    font-weight: 600;
+}
+
+.subcont-2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: #D3CCF1;
+    height: 25em;
+    width: 25em;
+    margin-top: 5em;
+}
+
+.form_input{
+    position: relative;
+    visibility: hidden;
+}
+
+.form_icon{
+    width: 5em;
+}
+        
+.form_label{
+    cursor: pointer;
+}
+
+.form_label :hover{
+    transform: translateY(-5px);
+}
+
+p{
+    color: black;
+
+}
+
+.inpdec2{
+    width: 40em;
+    height: 2em;
+    font-family: 'attack11';
+    border: none;
+    background-color: #D3CCF1;
+}

@@ -1,0 +1,107 @@
+.con1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+
+::-webkit-input-placeholder{
+    font-family: 'attack11';
+}
+
+.corzinha{
+    background-color: #FAB98F;
+}
+
+.nsei{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FAB98F;
+    width: 100%;
+    height: 15em;
+}
+
+.ma3{
+    background-color: #FCEDF2;
+}
+
+input[type='file'] {
+    display: none;
+}
+
+.botao1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #BFCDFE;
+    width: 5em;
+    height: 2.3em;
+    border-radius: 30px;
+    text-align: center;
+}
+
+.botxt{
+text-align: center;
+margin-top: 14px;
+color:#fff;
+font-family: 'attack11';
+margin-left: 3px;
+font-size: 15px;
+font-weight: 500;
+}
+
+
+.desc{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 5em;
+    background-color: #FCEDF2;
+}
+
+.txt-edtperfil{
+    font-family: 'attack11';
+
+}
+
+
+.max-width {
+    max-width: 500px;
+    width: 100%;
+    margin-left: 28em;
+}
+
+.inpbt{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 16em;
+    background-color: #fff;
+    width: 10em;
+    height: 2em;
+    border: none;
+    border-radius: 30px;
+    font-family: 'attack11';
+    cursor: pointer;
+}
+
+#img1 {
+    max-width: 6em;
+    width:5em;
+    padding:10px;
+    background-color: #df93ff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.inpdec{
+    width: 40em;
+    height: 2em;
+    font-family: 'attack11';
+    border: none;
+    background-color: #DEC3B1;
+}

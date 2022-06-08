@@ -1,0 +1,409 @@
+
+.containeraa{
+  display: flex;
+  flex-direction: column;
+  background-color: #F7CBDA;
+
+  }
+  .sub-1{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffdce8;
+  }
+  .sub-2{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffdce8;
+  }
+  .sub-3{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
+  align-items: center;
+  background-color: #f9d2de;
+  height: 40em;
+  width: 84.3em;
+  }
+  
+  .img5{
+    width: 4em;
+  }
+
+  .imgaa{
+    width: 10em;
+  }
+  
+  .sub-4{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #F7CBDA;
+  height: 35em;
+  }
+
+
+  .img6{
+    width: 5em;
+    border-radius: 50px;
+    height: 5em;
+    object-fit: cover;
+     margin-left: 2em;
+  }
+  
+  .sub-5{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../../../public/images/bg-wave-blog-thumb@3x.png ');
+    background-size: 100% 100%;
+    background-color: #F7CBDA;
+    height: 14em;
+  }
+  
+  .sub-6{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #F7CBDA;
+    height: 40em;
+  }
+  
+  .sub-6-1{
+  display: flex;
+  flex-direction: column;
+  width: 20em;
+  margin-left: -2em;
+  }
+  
+  .sub-6-2{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #FAB98F;
+    width: 40em;
+    padding: 5px;
+    border-radius: 20px;
+    height: 8em;
+  }
+  
+  .sub-6-3{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #FAB98F;
+    margin-top: 1em;
+    width: 40em;
+    padding: 5px;
+    height: 8em;
+    border-radius: 20px;
+  }
+  
+  
+  .sub-7{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #CEBBF7;
+    height: 13em;
+  }
+  
+  
+  .txt-1{
+  font-family: 'attack9';
+  }
+  
+  .txt-2{
+  font-family: 'attack9';
+  background-color: #f9d2de;
+  }
+
+  .desc2{
+    font-family: 'attack11';
+    width: 50%;
+    background-color: #f9d2de;
+    margin-left: -1em;
+  }
+  
+  .txt-3{
+  width:70%;
+  text-align: center;
+  }
+  
+  .txt-4{
+  width: 70%;
+  text-align: center;
+  }
+  
+  .txt-5{
+  text-align: center;
+    font-family: 'attack9';
+  }
+  
+  .txt-6{
+  text-align: center;
+  }
+
+  .p-1{
+    text-align: center;
+    font-family: 'attack11';
+  }
+
+  .p-2{
+    margin-left: 4.4em;
+    text-align: center;
+    font-family: 'attack11';
+    width: 70%;
+  }
+
+  .p-3{
+    margin-left: 2.5em;
+    text-align: center;
+    font-family: 'attack11';
+    width: 80%;
+  }
+  
+  .txt-7{
+    margin-top: 3em;
+    font-family: 'attack11';
+  }
+  
+  .txt-8{
+    text-align: center;
+    width: 80%;
+    font-family: 'attack11';
+  }
+  
+  .txt-8-1{
+    text-align: center;
+    width: 79%;
+    font-family: 'attack11';
+  }
+  
+  .txt-8-2{
+    text-align: center;
+    font-family: 'attack9';
+    font-size: 36px;    
+  }
+
+  .tam5{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-right: -5em;
+    }
+
+  .txt-8-3{
+    text-align: center;
+    width: 75%;
+    font-family: 'attack11';
+  }
+  
+  .txt-9{
+    text-align: center;
+    font-family: 'attack11';
+    font-weight: bold;
+  }
+  
+  .txt-9-1{
+    font-size: 30px;
+    font-weight: bold;
+  }
+  
+  .sub-2-1{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content:center;
+  height: 50em;
+  
+  }
+
+  .tam{
+    width: 70%;
+  }
+
+  .tam2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f9d2de;
+  }
+
+  .tam3{
+    width: 50%;
+  }
+
+  .nome-me{
+    font-family: 'attack11';
+  }
+  
+  .sub-4-1{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5em;
+  }
+  
+  .sub-4-2{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3em;
+  margin-left: 4em;
+  }
+  
+  .sub-4-3{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 9.5em;
+  margin-top: 4em;
+  }
+
+  .btcont{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .b0{
+  background-color: rgb(247, 203, 218);
+  padding: 0.8em;
+  border-radius: 30px;
+  font-family: 'attack11';
+  border: 1px solid #ff83ac;
+  margin-right: 1em;
+  }
+  .b1{
+  background-color: #BFCDFE;
+  border: 1px solid #4c73ff;
+  padding: 0.8em;
+  border-radius: 30px;
+  font-family: 'attack11';
+  }
+  
+  .b3{
+  color: #446dff;
+  }
+  
+  .card-1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  width: 10em;
+  height: 10em;
+
+  }
+
+
+  .img2{
+    width: 12em;
+    border-radius: 10px;
+  }
+  
+  .img3{
+    width: 7em;
+    margin-left: 3em;
+  }
+  
+  .img4{
+    width: 9em;
+    margin-left: -3em;
+
+  }
+
+  .img5{
+    width: 9em;
+  }
+
+  .card-2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  width: 10em;
+  height: 10em;
+  margin-left: 5em;
+  }
+  
+  .cards{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-right: 5em;
+  
+  }
+  
+  .card-1:hover{
+    transition: all 200ms ease-in;
+    transform: scale(1.1);
+    }
+    
+  .card-2:hover{
+  transition: all 200ms ease-in;
+    transform: scale(1.1);
+  }
+  
+  
+  a{
+  text-decoration: none;
+  color: black;
+  }
+  
+  h1{
+    font-family: 'Attack-2';
+  }
+  
+@media screen and (min-width: 300px) and (max-width: 400px) {
+
+  .sub-1{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .txt-1{
+    font-size: 30px;
+    text-align: center;
+  }
+
+
+  .cards{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5em;
+  }
+
+  .img2{
+   width: 7em;
+   margin-left: -25px;
+  }
+
+  .sub-2-1, .sub-2, .sub-3{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .imgbr{
+    margin-top: -50em;
+  }
+
+}

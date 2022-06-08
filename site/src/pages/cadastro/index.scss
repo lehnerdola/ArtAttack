@@ -1,0 +1,142 @@
+.corzinha2{
+  background-color: #e1afe6;
+  height: 45em;
+}
+  
+  .b-voltar{
+    background-color: #BFCDFE;
+    padding: 0.5em;
+    width: 5em;
+    border-radius: 20px;
+    text-align: center;
+    border:#0037ff 1px solid;
+  }
+
+  .textin{
+    color: #fff;
+    font-family: 'attack11';
+  }
+
+  a{
+    text-decoration: none;
+  }
+
+  .img1{
+      margin-left: 60em;
+      width: 15em;
+  }
+  
+  a.links{
+    display: none;
+  }
+  
+  .conf{
+    margin-top: 2em;
+  }
+
+  .content{
+    width: 500px;
+    
+    position: relative; 
+  }
+  .content-1{
+    width: 500px;
+    margin: 5em 5em;
+    position: relative; 
+  }
+
+  .lab{
+    color: #000;
+    font-family: 'Koho-Regular';
+    font-weight: bold;
+  }
+
+  h1{
+    font-size: 48px;
+    color: #000000;
+    padding: 10px 0;
+    font-family: 'Playfair';
+    padding-bottom: 30px;
+  }
+  
+  
+  p{
+    margin-bottom:15px;
+    font-family: 'Koho-Regular';
+  }
+  
+  label{
+    color: #405c60;
+    position: relative;
+  }
+
+ ::-webkit-input-placeholder {
+    color: #000000; 
+    font-family: 'Koho-Regular';
+  }
+
+  input{
+    width: 95%;
+    margin-top: 4px;
+    padding: 10px;  
+    outline: none;
+    border: 1px solid #000000;
+    border-radius: 3px;
+    background-color: #fff;
+  }
+  
+  input[type="submit"]{
+    width: 100%;
+    cursor: pointer;  
+    background: #000000;
+    padding: 8px 5px;
+    color: #fff;
+    font-size: 20px;  
+    border: 1px solid #fff; 
+    margin-bottom: 10px;  
+    text-shadow: 0 1px 1px #333;
+    border-radius: 5px;
+  }
+ 
+  
+  .link{
+    position: absolute;
+    color: #000;
+    left: 0px;
+    height: 20px;
+    width: 440px;
+    padding: 17px 34px 20px 30px;
+    font-size: 16px;
+    text-align: center;
+  }
+  .link a {
+    background: #000;
+    padding: 6px;
+    color:#fff;
+    margin-left: 10px;
+    box-shadow: 0px 1px 4px 0px rgba(168, 168, 168, 0.6) inset;
+    font-family: 'Koho-Regular';
+    border-radius: 4px;  
+  
+    -webkit-transition: all 0.4s linear;
+    transition: all 0.4s  linear;
+  }
+  .link a:hover {
+    color: #f587ff;
+    background: #f7f7f7;
+  }
+
+  .br{
+    border: none;
+  }
+
+  .cadastro, 
+  .login{
+    position: absolute;
+    top: 0px;
+    width: 88%; 
+    padding: 18px 2em 60px 2em;
+    margin: 0px 0px 35px 0px;
+    border-radius: 5px;
+    
+  }
