@@ -1,4 +1,21 @@
-(1) login -- "feito, porem arrumo dps"
+(1) cadastro -- feito
+/POST  /usuario/cadastro
+
+    request
+    {
+    "email": "",
+    "senha": "",
+     "nmperfil": "",
+    "ocupacao": "",
+    "biografia": "A",
+    "contato": "", 
+    "imgperfil": ""
+}
+
+     response (204)
+    -- sem conteúdo
+
+(2) login -- "feito, porem arrumo dps"
 /POST  /usuario/login
 
     request
@@ -13,6 +30,7 @@
         "email": "",
         "nome": "" (nome do usuário)
     }
+
 
 (2) alterar informações da conta --feito
 
