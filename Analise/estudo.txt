@@ -7,7 +7,7 @@
     "senha": "",
      "nmperfil": "",
     "ocupacao": "",
-    "biografia": "A",
+    "biografia": "",
     "contato": "", 
     "imgperfil": ""
 }
