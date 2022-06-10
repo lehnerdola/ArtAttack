@@ -21,7 +21,7 @@ INSERT INTO TB_PROJETO (ID_USUARIO, NM_PROJETO, DS_PROJETO, DS_CATEGORIA, DS_MAT
 DELETE FROM TB_USUARIO
 WHERE ID_USUARIO = 2;
 
--- deletar projeto     
+-- deletar projeto      
 DELETE FROM tb_projeto 
       WHERE id_projeto = 1;
 

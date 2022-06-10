@@ -1,4 +1,4 @@
-import { InserirProjeto,alterarProjeto, consultarProjetos,buscarporNome,consultarProjetosPorId,buscarPorCategoria } from '../Repository/projetoRepository.js';
+import { InserirProjeto,alterarProjeto, consultarProjetos,buscarporNome,consultarProjetosPorId,buscarPorCategoria, ApagarProjeto } from '../Repository/projetoRepository.js';
 
 import {Router} from 'express'
 const server = Router();
@@ -92,6 +92,22 @@ server.put('/alterar/:id', async (req,resp) => {
         }
 
     } catch (err) {
+        resp.status(404).send({
+            erro: err.message
+        })
+    }
+})
+
+server.delete('/projeto/:id', async (req,resp) => {
+    try {
+        const {id} = req.params;
+        const resposta = await ApagarProjeto(id);
+
+        if(resposta != 1){
+            throw new Error('Não foi possivel deletar projeto') 
+        }
+         resp.status(204).send()
+    } catch(err){
         resp.status(404).send({
             erro: err.message
         })
