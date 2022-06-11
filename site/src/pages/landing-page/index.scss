@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   background-color: #F7CBDA;
-
+  scroll-behavior: smooth;
   }
 
   .imgcoin{
@@ -97,6 +97,8 @@
     border-radius: 20px;
     height: 8em;
   margin-left: -20em;
+  animation: go-back 1s; 
+
 
   }
   
@@ -347,12 +349,22 @@
   height: 10em;
   margin-left: 5em;
   }
+
+  @keyframes go-back{
+    from{
+      transform: translateX(100px);
+    }
+    to{
+      transform: translateX(0);
+    }
+  }
   
   .cards{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   margin-right: 5em;
+  
   
   }
   
