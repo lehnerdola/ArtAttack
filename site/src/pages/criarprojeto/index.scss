@@ -33,6 +33,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 .cont-2{
@@ -40,10 +41,9 @@
     flex-direction: row;
     background-color: #fff;
     justify-content: space-around;
+    margin-left: 1em;
     width: 80em;
-    margin-left: 3em;
     border-radius: 20px;
-    margin-top: 4em;
 }
 
 .subcont-1{
@@ -72,6 +72,23 @@
     margin-left: 0.1em;
     font-family: 'attack11';
     font-weight: 600;
+}
+
+.con{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.btpj{
+    background-color: #6586ff;
+    border: none;
+    padding: 1em;
+    width: 10em;
+    border-radius: 30px;
+    font-family: 'attack11';
+    color: #fff;
 }
 
 .subcont-2{

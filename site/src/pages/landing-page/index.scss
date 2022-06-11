@@ -5,6 +5,10 @@
   background-color: #F7CBDA;
 
   }
+
+  .imgcoin{
+    width: 8em;
+  }
   .sub-1{
   display: flex;
   flex-direction: row;
@@ -18,6 +22,7 @@
   justify-content: center;
   align-items: center;
   background-color: #ffdce8;
+  height: 35em;
   }
   .sub-3{
   display: flex;
@@ -26,8 +31,7 @@
   text-align: center;
   align-items: center;
   background-color: #f9d2de;
-  height: 40em;
-  width: 84.3em;
+  height: 30em;
   }
   
   .img5{
@@ -80,7 +84,6 @@
   display: flex;
   flex-direction: column;
   width: 20em;
-  margin-left: -2em;
   }
   
   .sub-6-2{
@@ -93,6 +96,8 @@
     padding: 5px;
     border-radius: 20px;
     height: 8em;
+  margin-left: -20em;
+
   }
   
   .sub-6-3{
@@ -105,6 +110,8 @@
     padding: 5px;
     height: 8em;
     border-radius: 20px;
+  margin-left: -20em;
+
   }
   
   
@@ -114,9 +121,12 @@
     justify-content: space-between;
     align-items: center;
     background-color: #CEBBF7;
-    height: 13em;
+    height: 21em;
   }
   
+  .sub-7-1{
+    margin-bottom: -5em;
+  }
   
   .txt-1{
   font-family: 'attack9';
@@ -190,21 +200,20 @@
   }
   
   .txt-8-2{
-    text-align: center;
     font-family: 'attack9';
-    font-size: 36px;    
+    font-size: 36px;   
+    width: 13em;
+    text-align: center;
   }
 
   .tam5{
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    margin-right: -5em;
     }
 
   .txt-8-3{
     text-align: center;
-    width: 75%;
+    width: 60%;
     font-family: 'attack11';
   }
   
@@ -225,8 +234,6 @@
   text-align: center;
   align-items: center;
   justify-content:center;
-  height: 50em;
-  
   }
 
   .tam{
@@ -369,41 +376,168 @@
     font-family: 'Attack-2';
   }
   
-@media screen and (min-width: 300px) and (max-width: 400px) {
+@media screen and (min-width: 300px) and (max-width: 480px) {
 
-  .sub-1{
+ .sub-1{
+   display: flex;
+   flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 15em;
+  }
+
+  .b0{
+    background-color: rgb(247, 203, 218);
+    border-radius: 30px;
+    font-family: 'attack11';
+    border: 1px solid #ff83ac;
+    }
+    .b1{
+    background-color: #BFCDFE;
+    border: 1px solid #4c73ff;
+    padding: 0.5em;
+    border-radius: 30px;
+    font-family: 'attack11';
+    }
+
+    .btcont{
+      margin-bottom: 4em;
+    }
+
+  .sub-2
+  {
+    flex-direction: column;
+    height: 50em;
+  }   
+
+  .imgbr{
+    width: 18em;
+  }
+  .sub-3
+  {
+    align-items: center;
+    flex-direction: column;
+    height: 50em;
+  }    
+
+  .sub-4{
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    height: 90em;
+  }
+
+  .sub-4-1,.sub-4-2, .sub-4-3{
+    margin-left: 0px;
+  }
+
+  .sub-4-1{
+    margin-top: 7em;
+  }
+
+
+  .sub-5{
+    margin-left: -30px;
+  }
+
+  .txt-7{
+    width: 15em;
+    font-size: 13px;
+  }
+
+  .imgcoin{
+    width: 5em;
+  }
+
+  .sub-6{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+  }
+
+  .tam5{
+    margin-right: 0px;
+  }
+
+  .sub-6-2,.sub-6-3{
+    width: 15em;
+    height: 5em;
     justify-content: center;
+    margin-left: 2em;
   }
 
-  .txt-1{
-    font-size: 30px;
+  .img6{
+    width: 2em;
+    height: 2em;
+    margin-right: 1em;
+  }
+
+  .txt-8, .txt-8-1{
+    font-size: 10px;
+    width: 19em;
     text-align: center;
+    margin-right: 3em;
   }
-
 
   .cards{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 5em;
+    margin-top: 0px;
+    margin-left: 5em;
+  }
+
+  .card-1, .card-2{
+    margin: 0px;
   }
 
   .img2{
-   width: 7em;
-   margin-left: -25px;
+    width: 9em;
   }
 
-  .sub-2-1, .sub-2, .sub-3{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  .p-1{
+    width: 70%;
+    margin-left: 3em;
   }
 
-  .imgbr{
-    margin-top: -50em;
+  .p-3{
+    margin-left: 2em;
   }
 
+  .p-2{
+    margin-left: 3em;
+    text-align: center;
+    font-size: 17px;
+  }
+
+  .sub-7{
+    flex-direction: row;
+    height: 20em;
+  }
+
+  .txt-1, .txt-2{
+    font-size: 33px;
+  }
+
+  .nome-me{
+    width: 120%;
+    margin-left: -1.3em;
+    text-align: center;
+    font-size: 15px;
+  }
+
+  .desc2{
+    font-size: 15px;
+    width: 100%;
+    margin-left: 0.1em;
+    text-align: center;
+  }
+
+  .txt-8-2{
+    font-size: 20px;
+    text-align: center;
+    margin-left: 1.5em;
+  }
+
+  .txt-8-3{
+    margin-left: 3.1em;
+    width: 70%;
+    font-size: 15px;
+  }
 }

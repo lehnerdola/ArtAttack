@@ -112,12 +112,19 @@ export default function LP() {
                     </div>
 
                     <div>
-                        <img src='../images/Cool Kids - Digital Currency.png' className='img5'></img>
+                        <img src='../images/Cool Kids - Digital Currency.png' className='imgcoin'></img>
                     </div>
 
                 </section>
 
                 <nav className="sub-6">
+
+
+                    <div className='tam5' >
+                        <h1 className="txt-8-2">Especialmente criado para você</h1>
+                        <p className='txt-8-3'>Você se interessou pela nossa proposta? Faça seu <Link to='../cadastro'><a class="b3"> cadastro </a> </Link>
+                            e espalhe sua arte mundo a fora através de nós </p>
+                    </div>
 
                     <div className="sub-6-1">
 
@@ -152,28 +159,21 @@ export default function LP() {
 
                     </div>
 
-
-
-                    <div className='tam5' >
-                        <h1 className="txt-8-2">Especialmente criado para você</h1>
-                        <p className='txt-8-3'>Você se interessou pela nossa proposta? Faça seu <Link to='../cadastro'><a class="b3"> cadastro </a> </Link>
-                            e espalhe sua arte mundo a fora através de nós </p>
-                    </div>
-
                 </nav>
 
                 <footer className='sub-7'>
 
 
-                    <div >
+                    <div className='sub-7-1'>
                         <p className="txt-9"> Art Attack Vem pro ataque!
-
                         </p>
-                    </div>
 
-                    <div className="img2">
+                        <div className="img2">
                         <img src="../images/Logotipo.png" className="img2" />
                     </div>
+                    </div>
+
+                   
 
                     <div >
 

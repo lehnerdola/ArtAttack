@@ -8,9 +8,6 @@
     width: 18em;
   }
 
-  .saa{
-    color: red;
-  }
   
   a.links{
     display: none;
@@ -93,8 +90,15 @@
     background-color: rgb(0, 0, 0);
     border-radius: 5px;
     font-family: 'attack11';
-    color: rgb(243, 171, 217);
+    color: #fff;
     padding: 0.5em;
+    transition: all 0.2s linear;
+
+  }
+
+  .mod:hover{
+    background-color: #fff;
+    color: rgb(243, 171, 217);
   }
 
   .subb-1{

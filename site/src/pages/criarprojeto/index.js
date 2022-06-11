@@ -54,6 +54,8 @@ export default function Projeto(){
         
             </div>
 
+            <div className='con'>
+
             <aside class="subcont-2">
                 
                     <div class="upload">
@@ -67,6 +69,8 @@ export default function Projeto(){
                         <p className='textocont' >Adicione uma imagem</p>
                     
             </aside>
+                <button className='btpj'>Enviar projeto</button>
+            </div>
 
     </main>
         </div>
