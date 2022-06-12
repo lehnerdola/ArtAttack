@@ -1,8 +1,12 @@
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
 
+import storage from 'local-storage'
 
-import {useState} from 'react'
+import {Logar} from '../../api/usuarioAPI.js'
+
+
+import {useEffect, useState} from 'react'
 
 import './index.scss';
 import { Link } from 'react-router-dom';
@@ -15,12 +19,18 @@ export default function Login() {
   const navigate = useNavigate();
 
 
+  useEffect(() => {
+    if(storage('usuario-logado')){
+      navigate('/feed')
+    }
+  }, [])
+
+
   async function entrarClick() {
     try{
-    const r = await axios.post('http://localhost:5000/usuario/login',{
-     email: email, 
-     senha: senha
-    });
+    const r = await Logar(email,senha);
+      storage('usuario-logado', r)
+
         navigate('/Feed');
 
   } catch (err){ 

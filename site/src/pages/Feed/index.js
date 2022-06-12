@@ -1,13 +1,29 @@
 import './index.scss';
 import { Link } from 'react-router-dom';
 
+import storage from 'local-storage'
+import { useNavigate } from 'react-router-dom';
+
 import {buscarProjetoPorNome } from '../../api/projetoAPI.js'
+import { useEffect } from 'react';
+
 
 
 export default function Feed() {
 
-    
+    function sairClick(){
+        storage.remove('usuario-logado');
+        navigate ('/login')
+    }
 
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if(!storage('usuario-logado')){
+            navigate ('/login')
+        }
+
+    }, [])
 
     return (
 
@@ -19,9 +35,7 @@ export default function Feed() {
                     <img src='./images/Screenshot_20220502-223132-694.png' className='imgperfil' />
                     </Link>
                 <div className='bo1'>
-                    <Link to="../landing-page">
-                        <p className='b1-txt'> Sair </p>
-                        </Link>
+                        <button className='b1-txt' onClick={sairClick}> Sair </button>
                 </div>
             </header>
 

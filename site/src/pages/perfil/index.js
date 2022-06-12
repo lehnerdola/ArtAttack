@@ -45,7 +45,7 @@ export default function Perfil() {
                         <p className='txt-perfil2'>{item.ctt}</p>
                         <Link to="../editarperfil">
                             <a className='b-5'>
-                                <p className='txt2'>Editar perfil    </p>
+                                <p className='txt2'>Editar perfil</p>
                             </a>
                         </Link>
                     </div>
