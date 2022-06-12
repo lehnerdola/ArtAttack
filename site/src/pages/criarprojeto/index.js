@@ -34,7 +34,7 @@ export default function Projeto(){
         
                     <p>
                         <h4 className='titulo1'>Categorize seu projeto:</h4>
-                        <select className='inpdec2'>
+                        <select className='inpdec2' >
                             <option placeholder="Fotografia" >Fotografia </option>
                             <option placeholder="">Ilustração Digital</option>
                             <option placeholder="">Ilustração tradicional</option>
@@ -66,8 +66,9 @@ export default function Projeto(){
                         </label>
                         </form>
                     </div>
+                    <button>
                         <p className='textocont' >Adicione uma imagem</p>
-                    
+                    </button>
             </aside>
                 <button className='btpj'>Enviar projeto</button>
             </div>

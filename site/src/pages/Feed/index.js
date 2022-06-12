@@ -14,7 +14,7 @@ export default function Feed() {
                     </Link>
                 <div className='bo1'>
                     <Link to="../landing-page">
-                        <p className='b1-txt'>Sair</p>
+                        <p className='b1-txt'> Sair </p>
                         </Link>
                 </div>
             </header>
@@ -126,7 +126,7 @@ export default function Feed() {
 
 
                                 </img>
-                                <p className='txt2'>usuario1</p>
+                                <p className='txt2'>@usuário1</p>
 
                             </div>
 
@@ -151,7 +151,7 @@ export default function Feed() {
 
 
                                 </img>
-                                <p className='txt2'>usuario1</p>
+                                <p className='txt2'>@usuário1</p>
 
                             </div>
 
@@ -176,7 +176,7 @@ export default function Feed() {
 
 
                                 </img>
-                                <p className='txt2'>usuario1</p>
+                                <p className='txt2'>@usuário1</p>
 
                             </div>
 

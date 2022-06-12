@@ -1,4 +1,4 @@
-import { InserirProjeto,alterarProjeto, consultarProjetos,buscarporNome,consultarProjetosPorId,buscarPorCategoria, ApagarProjeto } from '../Repository/projetoRepository.js';
+import { InserirProjeto, alterarProjeto, consultarProjetos,buscarporNome,consultarProjetosPorId,buscarPorCategoria, ApagarProjeto } from '../Repository/projetoRepository.js';
 
 import {Router} from 'express'
 const server = Router();

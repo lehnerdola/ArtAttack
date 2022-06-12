@@ -5,13 +5,24 @@ USE ATTACK;
 INSERT INTO TB_USUARIO (NM_USUARIO, DS_EMAIL, DS_SENHA, NM_PERFIL, DS_OCUPACAO, DS_BIOGRAFIA, DS_CONTATO, IMG_PERFIL)
      VALUES ('Leticia', 'lele@gmail.com.br', '123456', 'leh','Artista Independente','Bio top','1199542364','');
 
+INSERT INTO TB_USUARIO (NM_USUARIO, DS_EMAIL, DS_SENHA, NM_PERFIL, DS_OCUPACAO, DS_BIOGRAFIA, DS_CONTATO, IMG_PERFIL)
+     VALUES ('Gabe', 'gabecs0000@gmail.com', '14072006', 'Scar','Artista Independente','uma lenda viva','1192345678','');
+
 -- login
+select id_usuario 		id,
+       nm_usuario		nome,
+       ds_email			email
+  from tb_usuario
+ where ds_email 		= 'gabecs0000@gmail.com'
+   and ds_senha		= '14072006';
+
 select id_usuario 		id,
        nm_usuario		nome,
        ds_email			email
   from tb_usuario
  where ds_email 		= 'lele@gmail.com.br'
    and ds_senha		= '123456';
+
 
 -- cadastrar projeto
 INSERT INTO TB_PROJETO (ID_USUARIO, NM_PROJETO, DS_PROJETO, DS_CATEGORIA, DS_MATERIAIS )
@@ -77,4 +88,4 @@ SELECT id_projeto			id,
        ds_categoria		categoria,
        ds_materiais		materiais
   FROM tb_projeto
-  WHERE id_projeto  = 2 ;
+  WHERE id_projeto  = 1 ;

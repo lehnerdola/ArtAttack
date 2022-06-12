@@ -1,5 +1,8 @@
 .ma4{
     background-color: #fedfcb;
+    padding: 0vh;
+    
+
 }
 
 .bot1-txt{
@@ -8,6 +11,7 @@
     font-family: 'attack11';
     margin-top: -0.1em;
     font-size: 15px;
+    
 }
 
 .btao1{
@@ -18,6 +22,8 @@
     width: 3em;
     border-radius: 30px;
     font-family: 'Attack-3';
+    margin-top: 1em;
+    margin-left: 1em;
 }
 
 .titulo-1-1{
@@ -27,6 +33,7 @@
 
 .titulo1{
     font-family: 'attack3';
+    
 }
 
 .cont-1{
@@ -56,6 +63,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+
 }
 
 .maxwidth {
@@ -72,6 +80,7 @@
     margin-left: 0.1em;
     font-family: 'attack11';
     font-weight: 600;
+    
 }
 
 .con{
@@ -89,6 +98,8 @@
     border-radius: 30px;
     font-family: 'attack11';
     color: #fff;
+    margin-bottom: 1em;
+    margin-inline-end: 3em;
 }
 
 .subcont-2{
@@ -127,8 +138,15 @@ p{
 
 .inpdec2{
     width: 40em;
-    height: 2em;
+    height: 3em;
     font-family: 'attack11';
     border: none;
     background-color: #D3CCF1;
+}
+
+button{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-collapse: none;
+    border: #D3CCF1;
+    background-color:#D3CCF1;
 }
