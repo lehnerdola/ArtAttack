@@ -1,7 +1,13 @@
 import './index.scss';
 import { Link } from 'react-router-dom';
 
+import {buscarProjetoPorNome } from '../../api/projetoAPI.js'
+
+
 export default function Feed() {
+
+    
+
 
     return (
 
