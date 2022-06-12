@@ -37,6 +37,7 @@ export default function EditarPerfil(){
         
 
         <div class="desc">
+            <div className='desc2'>
             <p>
                 <h4 className='txt-edtperfil'>Nome</h4>
                 <input type="text" placeholder="@usuario" className='inpdec'/>
@@ -58,6 +59,7 @@ export default function EditarPerfil(){
             </p>
 
             <button className='inpbt'>Salvar</button>
+        </div>
         </div>
 
 

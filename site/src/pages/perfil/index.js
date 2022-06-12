@@ -36,7 +36,7 @@ export default function Perfil(){
        <div class="s2">
            <a className='b-4' >PROJETOS</a>
            <Link to="../criarprojeto">
-           <a class="b-2">CRIAR PROJETO</a>
+           <a class='b-22'>CRIAR PROJETO</a>
            </Link>
        </div>
     </nav>
