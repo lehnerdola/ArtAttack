@@ -144,9 +144,144 @@ p{
     background-color: #D3CCF1;
 }
 
+ HEAD
 button{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     border-collapse: none;
     border: #D3CCF1;
     background-color:#D3CCF1;
+}
+@media screen and (min-width: 300px) and (max-width: 480px){
+    .bot1-txt{
+        color: white;
+        text-align: center;
+        font-family: 'attack11';
+        margin-top: -0.1em;
+        font-size: 15px;
+    }
+    
+    .btao1{
+        background-color: #BFCDFE;
+        border: 1px solid #4c73ff;
+        height: 1em;
+        padding: 12px;
+        width: 3em;
+        border-radius: 30px;
+        font-family: 'Attack-3';
+    }
+    
+    .titulo-1-1{
+        font-family: 'attack2';
+        font-size: 30px;
+    }
+    
+    .titulo1{
+        font-family: 'attack3';
+    }
+    
+    .cont-1{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .cont-2{
+        display: flex;
+        flex-direction: column;
+        background-color: #fff;
+        justify-content: space-around;
+        width: 20em;
+        border-radius: 20px;
+    }
+    
+    .subcont-1{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .descricao{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .maxwidth {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 2.5em;
+    
+    }
+    
+    
+    .textocont{
+        text-align: center;
+        margin-left: 0.1em;
+        font-family: 'attack11';
+        font-weight: 600;
+    }
+    
+    .con{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+    
+    .btpj{
+        background-color: #6586ff;
+        border: none;
+        padding: 1em;
+        width: 10em;
+        border-radius: 30px;
+        font-family: 'attack11';
+        color: #fff;
+        margin-top: 1em;
+    }
+    
+    .subcont-2{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        background-color: #D3CCF1;
+        height: 15em;
+        width: 15em;
+        margin-top: 5em;
+    }
+    
+    .form_input{
+        position: relative;
+        visibility: hidden;
+    }
+    
+    .form_icon{
+        width: 5em;
+    }
+            
+    .form_label{
+        cursor: pointer;
+    }
+    
+    .form_label :hover{
+        transform: translateY(-5px);
+    }
+    
+    p{
+        color: black;
+    
+    }
+    
+    .inpdec2{
+        width: 20em;
+        height: 2em;
+        font-family: 'attack11';
+        border: none;
+        background-color: #D3CCF1;
+    }
+
 }

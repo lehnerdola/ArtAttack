@@ -111,6 +111,15 @@
     font-family: 'attack11';
 }
 
+@media screen and (min-width: 300px) and (max-width: 480px){
+
+    .sub1{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
 
 
 @font-face {

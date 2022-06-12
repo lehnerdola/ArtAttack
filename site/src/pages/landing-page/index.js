@@ -49,7 +49,7 @@ export default function LP() {
                     
                     <div className='tam2'>
                         <h1 className="txt-2">O ideal para você aqui</h1>
-                        <p className='desc2'>Divulgue sua arte através de uma simples postagem, aceitamos divulgação por interesses financeiros, apenas deixe suas informações na obra para que os valorizadores de arte possam buscá-lo para uma colaboração futura!</p>
+                        <p className='desc21'>Divulgue sua arte através de uma simples postagem, aceitamos divulgação por interesses financeiros, apenas deixe suas informações na obra para que os valorizadores de arte possam buscá-lo para uma colaboração futura!</p>
                     </div>
 
                     <div className="cards">
