@@ -1,7 +1,29 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable jsx-a11y/alt-text */
 import './index.scss';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
+
+import { CriarProjeto } from '../../api/projetoAPI';
 
 export default function Projeto(){
+
+    const [nome, setNome] = useState('');
+    const [descricao, setDescricao] = useState('');
+    const [categoria, setCategoria] = useState('');
+    const [materiais, setMateriais] = useState('');
+    
+    async function ProjClick(){
+        try {
+            
+            const r = await CriarProjeto(nome, descricao, categoria, materiais);
+
+            alert('O SEU PROJETO FOI CRIADO!')
+
+        } catch (err) {
+            alert(err.message)
+        }
+    }
 
     return(
 
@@ -24,31 +46,22 @@ export default function Projeto(){
                 <div class="descricao">
                     <p>
                         <h4 className='titulo1'>Nome</h4>
-                        <input type="text" placeholder="nome da sua obra" className='inpdec2'/>
+                        <input type="text" placeholder="nome da sua obra"  value={nome} onChange={e => setNome(e.target.value)} className='inpdec2'/>
                     </p>
         
                     <p>
                         <h4 className='titulo1'>Descrição</h4>
-                        <input type="text" placeholder="informe uma descrição" className= 'inpdec2'/>
+                        <input type="text" placeholder="informe uma descrição"  value={descricao} onChange={e => setDescricao(e.target.value)} className= 'inpdec2'/>
                     </p>
         
                     <p>
                         <h4 className='titulo1'>Categorize seu projeto:</h4>
-                        <select className='inpdec2' >
-                            <option placeholder="Fotografia" >Fotografia </option>
-                            <option placeholder="">Ilustração Digital</option>
-                            <option placeholder="">Ilustração tradicional</option>
-                            <option placeholder="">Design</option>
-                            <option placeholder="">Artesanato</option>
-                            <option placeholder="">Grafite</option>
-                            <option placeholder="">Escultura</option>
-                            <option placeholder="">Colagem</option>
-                        </select>
+                        <input type="text" placeholder="fotografia, arte digital,artesanato, escultura escultura etc"  value={categoria} onChange={e => setCategoria(e.target.value)} className= 'inpdec2'/>
                     </p>
         
                     <p>
                         <h4 className='titulo1'>Materiais utilizados:</h4>
-                        <input type="text" placeholder="ex: paint, lightroom, figma, ilustrator" className='inpdec2'/>
+                        <input type="text" placeholder="ex: paint, lightroom, figma, ilustrator" value={materiais} onChange={e => setMateriais(e.target.value)} className='inpdec2'/>
                     </p>
                 </div>
         
@@ -70,7 +83,7 @@ export default function Projeto(){
                         <p className='textocont' >Adicione uma imagem</p>
                     </button>
             </aside>
-                <button className='btpj'>Enviar projeto</button>
+                <button onClick={ProjClick()} className='btpj'>Enviar projeto</button>
             </div>
 
     </main>
