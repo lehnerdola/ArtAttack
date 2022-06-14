@@ -12,17 +12,30 @@ export async function Logar(email, senha){
       }
 
 
-export async function infoPerfil() {
+export async function infoPerfil(id) {
     const resposta = await api.get('/perfil');
     return resposta.data; 
 }
 
-export async function CadastrarUsuario (nome, email, senha){
-    const r = await api.post('http://localhost:5000/usuario/cadastro',{
-        nome: nome,
-        email: email,
-        senha: senha
+export async function CadUsuario(nomeperfil,email,senha, ocupacao, bio, ctt){
+    const resposta = await api.post('/usuario/cadastro', {
+            nomeperfil: nomeperfil, 
+            email: email,
+            senha: senha,
+            ocupacao: ocupacao,
+            bio: bio,
+            ctt : ctt
     })
+    return resposta.data;
+}
 
-    return r.data;
-} 
+export async function alterarPerfil(id, nomeperfil,ocupacao, bio, ctt){
+    const resposta = await api.put(`/alterarperfil/${id}`, {
+            nomeperfil:  nomeperfil, 
+            ocupacao: ocupacao,
+            bio: bio,
+            ctt : ctt
+            
+    })
+    return resposta.data;
+}

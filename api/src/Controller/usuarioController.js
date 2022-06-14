@@ -30,11 +30,10 @@ server.post('/usuario/cadastro', async (req, resp) => {
 
         resp.send(fazerCad);
 
-        if (!resposta) {
+        if (!fazerCad) {
             throw new Error('Credenciais inválidas');
         }
 
-        resp.send(resposta)
     } catch (err) {
         resp.status(401).send({
             erro: err.message

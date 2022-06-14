@@ -26,6 +26,7 @@ root.render(
           <Route path='/landing-page' element={<LandingPage />} />
           <Route path='/login'        element={<Login />} />
           <Route path='/perfil' element={<Perfil/>} />
+          <Route path='/alterarperfil/:id' element={<Perfil />} /> 
           <Route path='/editarperfil' element={<EditarPerfil/>} />
           <Route path='/criarprojeto' element={<Projeto/>} />
       </Routes>

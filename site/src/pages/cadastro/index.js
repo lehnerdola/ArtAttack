@@ -2,26 +2,27 @@ import './index.scss';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
-import{ CadastrarUsuario } from '../../api/usuarioAPI'
+import {CadUsuario} from '../../api/usuarioAPI'
+
 
 export default function Cad() {
+  const [nomeperfil, setNomePerfil] = useState('');
+  const [email, setEmail] = useState('');
+  const [senha, setSenha] = useState('');
+  const [ocupacao, setOcupacao] = useState('');
+  const [bio, setBio] = useState('');
+  const [ctt, setCtt] = useState('');
 
-    const [nome, setNome] = useState('');
-    const [email, setEmail] = useState('');
-    const [senha, setSenha] = useState('');
-    //const [imagem, setImagem] = useState('');
+  
+  async function salvarClick() {
+    try {
+      const r = await CadUsuario(nomeperfil,email,senha, ocupacao,bio, ctt);
 
-    async function CadClick(){
-        try {
-          
-          const resposta = await CadastrarUsuario(nome, email, senha);
-
-          alert('usuario cadastrado com sucesso!')
-
-        } catch (err) {
-          alert(err.message)
-        }
+      alert('usuario cadastrado!')
+    } catch (err) {
+      alert(err.message)
     }
+  }
 
     return(
     
@@ -40,24 +41,50 @@ export default function Cad() {
             <label class="lab">Nome de usuário</label>
             <input id="nome_cad" name="nome_cad" 
             className='email_login2'
-            required="required" type="text" placeholder="Crie um nome de usúario" value={nome} onChange={e => setNome(e.target.value)} />
+            required="required" type="text" placeholder="Crie um nome de usúario" value={nomeperfil} onChange={e => setNomePerfil(e.target.value)}  />
           </p>
 
-             <p> 
+
+          <p> 
               <label class="lab"> Email </label>
                <input id="email_login" name="email_login" required="required" type="email" 
                className='email_login2'
-               placeholder="Insira o seu e-mail :)" value={email} onChange={e => setEmail(e.target.value)}/>
+               placeholder="Insira o seu e-mail :)"  value={email} onChange={e => setEmail(e.target.value)}/>
              </p>
              <p> 
                <label class="lab">Crie sua senha</label>
                <input id="senha_login" name="senha-login" required="required" type="password" 
                className='email_login2'
                
-               placeholder="Insira a sua senha :)" value={senha} onChange={e => setSenha(e.target.value)} /> 
+               placeholder="Insira a sua senha :)" value={senha} onChange={e => setSenha(e.target.value)}/> 
              </p>
+          
+   <p> 
+            <label class="lab">Ocupação</label>
+            <input id="nome_cad" name="nome_cad" 
+            className='email_login2'
+            required="required" type="text" placeholder="Digite a sua ocupação" value={ocupacao} onChange={e => setOcupacao(e.target.value)}  />
+          </p>
+
+          
+   <p> 
+            <label class="lab">bio</label>
+            <input id="nome_cad" name="nome_cad" 
+            className='email_login2'
+            required="required" type="text" placeholder="Digite uma bio sobre você" value={bio} onChange={e => setBio(e.target.value)}  />
+          </p>
+
+
+          <p> 
+            <label class="lab">Contato</label>
+            <input id="nome_cad" name="nome_cad" 
+            className='email_login2'
+            required="required" type="text" placeholder="Digite as informações de contato " value={ctt} onChange={e => setCtt(e.target.value)}  />
+          </p>
+
+
              <p> 
-               <button onClick={CadClick()}>Cadastrar</button> 
+               <button onClick={salvarClick}>Cadastrar</button> 
              </p>
 
               <div className='subb1' >
