@@ -83,7 +83,7 @@ export default function Projeto(){
                         <p className='textocont' >Adicione uma imagem</p>
                     </button>
             </aside>
-                <button onClick={ProjClick()} className='btpj'>Enviar projeto</button>
+                <button onClick={ProjClick} className='btpj'>Enviar projeto</button>
             </div>
 
     </main>

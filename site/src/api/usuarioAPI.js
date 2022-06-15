@@ -12,14 +12,14 @@ export async function Logar(email, senha){
       }
 
 
-export async function infoPerfil() {
-    const resposta = await api.get('/perfil');
+export async function infoPerfil(idUsuario) {
+    const resposta = await api.get(`/perfil/${idUsuario}`);
     return resposta.data; 
 }
 
-export async function CadUsuario(nomeperfil,email,senha, ocupacao, bio, ctt){
-    const resposta = await api.post('/usuario/cadastro', {
-            nomeperfil: nomeperfil, 
+export async function CadUsuario(nmperfil,email,senha, ocupacao, bio, ctt){
+    const resposta = await api.post('/cadastro', {
+            nmperfil: nmperfil, 
             email: email,
             senha: senha,
             ocupacao: ocupacao,
@@ -29,9 +29,9 @@ export async function CadUsuario(nomeperfil,email,senha, ocupacao, bio, ctt){
     return resposta.data;
 }
 
-export async function alterarPerfil(id, nomeperfil,ocupacao, bio, ctt){
+export async function alterarPerfil(id, nome,ocupacao, bio, ctt){
     const resposta = await api.put(`/alterarperfil/${id}`, {
-            nomeperfil:  nomeperfil, 
+            nome:  nome, 
             ocupacao: ocupacao,
             bio: bio,
             ctt : ctt

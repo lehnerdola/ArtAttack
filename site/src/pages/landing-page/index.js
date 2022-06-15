@@ -54,11 +54,11 @@ export default function LP() {
 
                     <div className="cards">
                         <div class="card-1">
-                            <img src='../images/1dbe50dd-b345-4113-9785-51d8247e43a1.jpg' className='img2' />
+                            <img src='../images/1dbe50dd-b345-4113-9785-51d8247e43a1.jpg' className='img222' />
                         </div>
 
                         <div class="card-2">
-                            <img src='../images/Soft One.jpg' className='img2' />
+                            <img src='../images/Soft One.jpg' className='img222' />
                         </div>
                     </div>
 

@@ -16,20 +16,20 @@ export async function login(email, senha) {
 
 }
 
- export async function consultarperfil(){
+ export async function consultarperfil(id){
 
     const comando =
     `
-SELECT id_usuario       id,
-		NM_USUARIO      nome,  
-        NM_PERFIL       nome, 
-        DS_OCUPACAO     ocupacao, 
-        DS_BIOGRAFIA    bio, 
-        DS_CONTATO      ctt 
-FROM tb_usuario 
+        SELECT id_usuario       id,
+                NM_USUARIO      nome,  
+                DS_OCUPACAO     ocupacao, 
+                DS_BIOGRAFIA    bio, 
+                DS_CONTATO      ctt 
+        FROM tb_usuario 
+       WHERE id_usuario = ?
      `;
 
-const [linhas] = await con.query(comando)
+const [linhas] = await con.query(comando, [id])
 return linhas;
 
  }
@@ -40,7 +40,6 @@ return linhas;
     `
 SELECT id_usuario       id,
 		NM_USUARIO      nome,  
-        NM_PERFIL       nome, 
         DS_OCUPACAO     ocupacao, 
         DS_BIOGRAFIA    bio, 
         DS_CONTATO      ctt 
@@ -58,7 +57,6 @@ return linhas;
     `
 SELECT id_usuario       id,
 		NM_USUARIO      nome,  
-        NM_PERFIL       nome, 
         DS_OCUPACAO     ocupacao, 
         DS_BIOGRAFIA    bio, 
         DS_CONTATO      ctt 
@@ -83,7 +81,7 @@ return linhas;
          DS_CONTATO =   ?  
    WHERE id_usuario =   ?
    `;
-   const [resposta] = await con.query (comando, [perfil.nome, perfil.ocupacao, perfil.biografia, perfil.contato, id])
+   const [resposta] = await con.query (comando, [perfil.nome, perfil.ocupacao, perfil.bio, perfil.ctt, id])
     return resposta.affectedRows;
  }
 
@@ -102,10 +100,10 @@ export async function fazerCadastro(usuario)
 {
     const comando = 
     `
-    INSERT INTO TB_USUARIO ( NM_PERFIL, DS_EMAIL, DS_SENHA, ds_ocupacao, ds_biografia, ds_contato)
-     VALUES ( ?, ?, ?,?,?,? )
+    INSERT INTO TB_USUARIO (nm_usuario, DS_EMAIL, DS_SENHA, ds_ocupacao, ds_biografia, ds_contato)
+     VALUES ( ?, ?, ?,?,?,?)
     `;
-    const [resposta] = await con.query(comando, [usuario.nomeperfil, usuario.email, usuario.senha, usuario.ocupacao, usuario. bio, usuario.ctt]);
+    const [resposta] = await con.query(comando, [usuario.nmperfil, usuario.email, usuario.senha, usuario.ocupacao, usuario. bio, usuario.ctt]);
 
     usuario.id = resposta.insertId;
 

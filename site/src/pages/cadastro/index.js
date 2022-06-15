@@ -6,7 +6,7 @@ import {CadUsuario} from '../../api/usuarioAPI'
 
 
 export default function Cad() {
-  const [nomeperfil, setNomePerfil] = useState('');
+  const [nmperfil, setNomePerfil] = useState('');
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
   const [ocupacao, setOcupacao] = useState('');
@@ -16,7 +16,7 @@ export default function Cad() {
   
   async function salvarClick() {
     try {
-      const r = await CadUsuario(nomeperfil,email,senha, ocupacao,bio, ctt);
+      const r = await CadUsuario(nmperfil,email,senha, ocupacao,bio, ctt);
 
       alert('usuario cadastrado!')
     } catch (err) {
@@ -41,7 +41,7 @@ export default function Cad() {
             <label class="lab">Nome de usuário</label>
             <input id="nome_cad" name="nome_cad" 
             className='email_login2'
-            required="required" type="text" placeholder="Crie um nome de usúario" value={nomeperfil} onChange={e => setNomePerfil(e.target.value)}  />
+            required="required" type="text" placeholder="Crie um nome de usúario" value={nmperfil} onChange={e => setNomePerfil(e.target.value)}  />
           </p>
 
 
@@ -68,7 +68,7 @@ export default function Cad() {
 
           
    <p> 
-            <label class="lab">bio</label>
+            <label class="lab">Biografia</label>
             <input id="nome_cad" name="nome_cad" 
             className='email_login2'
             required="required" type="text" placeholder="Digite uma bio sobre você" value={bio} onChange={e => setBio(e.target.value)}  />

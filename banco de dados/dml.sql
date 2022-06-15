@@ -2,11 +2,11 @@ USE ATTACK;
 
 -- carga inicial usuario
 
-INSERT INTO TB_USUARIO (NM_USUARIO, DS_EMAIL, DS_SENHA, NM_PERFIL, DS_OCUPACAO, DS_BIOGRAFIA, DS_CONTATO, IMG_PERFIL)
-     VALUES ('Leticia', 'lele@gmail.com.br', '123456', 'leh','Artista Independente','Bio top','1199542364','');
+INSERT INTO TB_USUARIO (NM_USUARIO, DS_EMAIL, DS_SENHA, DS_OCUPACAO, DS_BIOGRAFIA, DS_CONTATO, IMG_PERFIL)
+     VALUES ('Leticia', 'lele@gmail.com.br', '123456','Artista Independente','Bio top','1199542364','');
 
-INSERT INTO TB_USUARIO (NM_USUARIO, DS_EMAIL, DS_SENHA, NM_PERFIL, DS_OCUPACAO, DS_BIOGRAFIA, DS_CONTATO, IMG_PERFIL)
-     VALUES ('Gabe', 'gabecs0000@gmail.com', '14072006', 'Scar','Artista Independente','uma lenda viva','1192345678','');
+INSERT INTO TB_USUARIO (NM_USUARIO, DS_EMAIL, DS_SENHA, DS_OCUPACAO, DS_BIOGRAFIA, DS_CONTATO, IMG_PERFIL)
+     VALUES ('Gabe', 'gabecs0000@gmail.com', '14072006','Artista Independente','uma lenda viva','1192345678','');
 
 -- login
 select id_usuario 		id,
@@ -64,7 +64,6 @@ SELECT id_projeto			id,
 -- consultar informaçoes do perfil  
 SELECT id_usuario id,
 		NM_USUARIO nome,  
-        NM_PERFIL nome, 
         DS_OCUPACAO ocupacao, 
         DS_BIOGRAFIA bio, 
         DS_CONTATO ctt, 

@@ -22,7 +22,7 @@ server.post('/usuario/login', async (req, resp) => {
     }
 })
 
-server.post('/usuario/cadastro', async (req, resp) => {
+server.post('/cadastro', async (req, resp) => {
     try {
         const cadastro = req.body;
 
@@ -42,9 +42,10 @@ server.post('/usuario/cadastro', async (req, resp) => {
 
 })
 
-server.get('/perfil' , async (req, resp) => {
+server.get('/perfil/:id' , async (req, resp) => {
     try{
-        const resposta = await consultarperfil();
+        const id = req.params.id;
+        const resposta = await consultarperfil(id);
         resp.send(resposta)
 
     }
@@ -89,7 +90,7 @@ server.put( '/alterarperfil/:id', async (req,resp) => {
         const resposta = await alterarperfil(id,perfil)
 
         if(resposta != 1){
-            throw new Error('O projeto não pode ser alterado!');
+            throw new Error('O perfil não pode ser alterado!');
         }
         else {
             resp.status(204).send()
