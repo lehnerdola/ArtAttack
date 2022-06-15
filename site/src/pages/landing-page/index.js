@@ -168,11 +168,11 @@ export default function LP() {
                         <p className="txt-9"> Art Attack Vem pro ataque!
                         </p>
 
-                        <div>
-                        <img src="../images/Logotipo.png" className="img2" />
+                        <div className>
                     </div>
                     </div>
 
+                    <img src="../images/Logotipo.png" className="img2" />
                    
 
                     <div >
