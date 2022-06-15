@@ -12,7 +12,7 @@ export async function Logar(email, senha){
       }
 
 
-export async function infoPerfil(id) {
+export async function infoPerfil() {
     const resposta = await api.get('/perfil');
     return resposta.data; 
 }

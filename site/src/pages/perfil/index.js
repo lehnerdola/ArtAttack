@@ -1,23 +1,23 @@
 import './index.scss';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { infoPerfil } from '../../api/usuarioAPI.js'
 import { useState, useEffect } from 'react';
+import storage from 'local-storage'
 
 export default function Perfil() {
 
+    const idUsuario = storage('usuario-logado').id
     const [perfil, setPerfil] = useState([]);
 
     async function perfilUsuarioInfo() {
-        const resp = await infoPerfil();
-        console.log(resp);
+        const resp = await infoPerfil(idUsuario);
         setPerfil(resp)
     }
 
     useEffect(() => {
         perfilUsuarioInfo();
     }, [])
-
 
     return (
 
@@ -66,10 +66,7 @@ export default function Perfil() {
 
 
 
-                <div class="s3">
-                    <img src="./images/Screenshot_20220501-111439-460.png" class="imagem" />
-                    <input type="button" value="Remover" class="b-3" />
-                </div>
+            
 
                 <div class="s3">
                     <img src="./images/Screenshot_20220502-225108.png" class="imagem" />

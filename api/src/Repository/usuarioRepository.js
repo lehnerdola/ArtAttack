@@ -102,10 +102,10 @@ export async function fazerCadastro(usuario)
 {
     const comando = 
     `
-    INSERT INTO TB_USUARIO ( NM_PERFIL, DS_EMAIL, DS_SENHA)
-     VALUES ( ?, ?, ? )
+    INSERT INTO TB_USUARIO ( NM_PERFIL, DS_EMAIL, DS_SENHA, ds_ocupacao, ds_biografia, ds_contato)
+     VALUES ( ?, ?, ?,?,?,? )
     `;
-    const [resposta] = await con.query(comando, [usuario.nomeperfil, usuario.email, usuario.senha]);
+    const [resposta] = await con.query(comando, [usuario.nomeperfil, usuario.email, usuario.senha, usuario.ocupacao, usuario. bio, usuario.ctt]);
 
     usuario.id = resposta.insertId;
 
