@@ -21,8 +21,22 @@ export async function CriarProjeto (nome, descricao, categoria, materiais, usuar
         nome: nome,
         descricao: descricao,
         categoria: categoria,
-        materiais: materiais
+        materiais: materiais,
+        usuario: usuario
     })
 
     return r.data;
 } 
+
+export async function AdicionarImagem(id, imagem){
+    const formData = new FormData();
+    formData.append('img', imagem);
+
+    const resposta = await api.put(`/projeto/${id}/img`, formData, {
+        headers: {
+            "Content-Type": "multipart/form-data"
+        },
+    });
+
+    return resposta.status;
+}

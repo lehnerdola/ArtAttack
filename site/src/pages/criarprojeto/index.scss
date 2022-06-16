@@ -80,7 +80,6 @@
     margin-left: 0.1em;
     font-family: 'attack11';
     font-weight: 600;
-    
 }
 
 .con{
@@ -284,4 +283,13 @@ button{
         background-color: #D3CCF1;
     }
 
+}
+
+#imgProjeto {
+    visibility: hidden;
+    position: absolute;
+}
+
+.img-projeto{
+    width: 12em;
 }

@@ -16,6 +16,8 @@ export async function alterarProjeto(id,projeto){
 }
 
 
+
+
 export async function consultarProjetos(){
     const comando = 
     `
@@ -23,7 +25,8 @@ export async function consultarProjetos(){
 	   nm_projeto		nome,
        ds_projeto		descricao,
        ds_categoria		categoria,
-       ds_materiais		materiais
+       ds_materiais		materiais,
+       img_projeto      imagem
   FROM tb_projeto;   
     `;
     const [linhas] = await con.query(comando);
@@ -37,7 +40,8 @@ export async function consultarProjetosPorId(id){
 	   nm_projeto		nome,
        ds_projeto		descricao,
        ds_categoria		categoria,
-       ds_materiais		materiais
+       ds_materiais		materiais,
+       img_projeto      imagem
   FROM tb_projeto
   WHERE id_projeto = ? 
   `;
@@ -52,7 +56,8 @@ export async function buscarporNome(nome){
     nm_projeto			nome,
     ds_projeto		    descricao,
     ds_categoria		categoria,
-    ds_materiais		materiais
+    ds_materiais		materiais,
+    img_projeto      imagem
 
     FROM tb_projeto   
     WHERE nm_projeto like ?
@@ -68,7 +73,8 @@ export async function buscarPorCategoria(categoria){
     nm_projeto			nome,
     ds_projeto		    descricao,
     ds_categoria		categoria,
-    ds_materiais		materiais
+    ds_materiais		materiais,
+    img_projeto      imagem
 
     FROM tb_projeto
     WHERE ds_categoria like ?   
@@ -90,6 +96,17 @@ export async function InserirProjeto(projeto){
     return projeto;
 }
 
+export async function AdicionarImagem(imagem, id) {
+    const comando = 
+    `
+    UPDATE tb_projeto 
+    SET img_projeto      = ?
+    WHERE id_projeto    = ?
+    `
+    const [resposta] = await con.query(comando, [imagem, id]);
+    return resposta.affectedRows;
+}
+
 export async function ApagarProjeto (id){
      const comando =
      `
@@ -101,3 +118,4 @@ export async function ApagarProjeto (id){
 
      return resposta.affectedRows;
 }
+

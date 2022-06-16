@@ -1,4 +1,7 @@
-import { InserirProjeto, alterarProjeto, consultarProjetos,buscarporNome,consultarProjetosPorId,buscarPorCategoria, ApagarProjeto } from '../Repository/projetoRepository.js';
+import { InserirProjeto, alterarProjeto, consultarProjetos,buscarporNome,consultarProjetosPorId,buscarPorCategoria, ApagarProjeto, AdicionarImagem } from '../Repository/projetoRepository.js';
+
+import multer from 'multer'
+const upload = multer({ dest: 'storage/projetos' })
 
 import {Router} from 'express'
 const server = Router();
@@ -18,6 +21,25 @@ server.post('/projeto', async (req, resp) =>{
         })
     }
 
+})
+
+
+server.put('/projeto/:id/img', upload.single('img') , async (req, resp) => {
+    try {
+        const { id } = req.params;
+        const imagem = req.file.path;
+
+        const resposta = await AdicionarImagem(imagem, id);
+        if (resposta != 1) {
+            throw new Error('tem alguma coisa errada ai amigão')
+        }
+
+        resp.status(204).send();
+    } catch (err) {
+        resp.status(400).send({
+            erro:err.message
+        })
+    }
 })
 
 

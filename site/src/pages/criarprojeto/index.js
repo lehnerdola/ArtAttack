@@ -1,10 +1,11 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-/* eslint-disable jsx-a11y/alt-text */
+
 import './index.scss';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
-import { CriarProjeto } from '../../api/projetoAPI';
+import storage from 'local-storage'
+
+import { CriarProjeto, AdicionarImagem } from '../../api/projetoAPI';
 
 export default function Projeto(){
 
@@ -12,11 +13,13 @@ export default function Projeto(){
     const [descricao, setDescricao] = useState('');
     const [categoria, setCategoria] = useState('');
     const [materiais, setMateriais] = useState('');
-    
+    const [imagem, setImagem] = useState();
+
     async function ProjClick(){
         try {
-            
-            const r = await CriarProjeto(nome, descricao, categoria, materiais);
+            const usuario = storage('usuario-logado').id;
+            const novoprojeto = await CriarProjeto(nome, descricao, categoria, materiais, usuario);
+            const r = await AdicionarImagem(novoprojeto.id, imagem)
 
             alert('O SEU PROJETO FOI CRIADO!')
 
@@ -24,6 +27,16 @@ export default function Projeto(){
             alert(err.message)
         }
     }
+
+    function pegarImg(){
+        document.getElementById('imgProjeto').click();
+    }
+
+    function mostrarImg(){
+        return URL.createObjectURL(imagem);
+    }
+
+    
 
     return(
 
@@ -71,17 +84,23 @@ export default function Projeto(){
 
             <aside class="subcont-2">
                 
-                    <div class="upload">
+                    <div class="upload" onClick={pegarImg}>
+                    <input type='file' id='imgProjeto' onChange={e => setImagem(e.target.files)}/>
                     <form className='form'>
-                     <label for='form_input' className='form_label'>
-                    <img src="./images/camera-removebg-preview.png" className='form_icon' />
-                        <input type="file" id='form_input' className='form_input'/>
+                    <label for='form_input' className='form_label'>
+
+                    {!imagem &&
+                        <img src="./assets/images/addimagem.png" alt='' className='form_icon'/>
+                    }
+
+                    {imagem &&
+                        <img className="img-projeto" src={mostrarImg()} alt=''/>
+                    }
+                    <input type="file" id='form_input'className='form_input'/>
+
                         </label>
                         </form>
                     </div>
-                    <button>
-                        <p className='textocont' >Adicione uma imagem</p>
-                    </button>
             </aside>
                 <button onClick={ProjClick} className='btpj'>Enviar projeto</button>
             </div>
