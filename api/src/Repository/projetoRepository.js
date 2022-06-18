@@ -87,7 +87,7 @@ export async function buscarPorCategoria(categoria){
 export async function InserirProjeto(projeto){
     const comando =
     `
-    INSERT INTO TB_PROJETO (ID_PROJETO, NM_PROJETO, DS_PROJETO, DS_CATEGORIA, DS_MATERIAIS )
+    INSERT INTO TB_PROJETO (id_usuario, NM_PROJETO, DS_PROJETO, DS_CATEGORIA, DS_MATERIAIS)
      VALUES (?, ?, ?, ?, ?)
     `;
 
@@ -101,8 +101,8 @@ export async function AdicionarImagem(imagem, id) {
     `
     UPDATE tb_projeto 
     SET img_projeto      = ?
-    WHERE id_projeto    = ?
-    `
+    WHERE id_projeto     = ?
+    `;
     const [resposta] = await con.query(comando, [imagem, id]);
     return resposta.affectedRows;
 }

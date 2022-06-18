@@ -16,19 +16,19 @@ export async function buscarProjetoPorNome(nome) {
     return resposta.data; 
 }
 
-export async function CriarProjeto (nome, descricao, categoria, materiais, usuario){
-    const r = await api.post('http://localhost:5000/projeto',{
-        nome: nome,
-        descricao: descricao,
-        categoria: categoria,
-        materiais: materiais,
-        usuario: usuario
+export async function CriarProjeto(nome, descricao, categoria, materiais, usuario){
+    const r = await api.post('/projeto',{
+     usuario: usuario,
+     nome: nome,
+     descricao: descricao,
+     categoria:categoria,
+     materiais: materiais
     })
 
     return r.data;
 } 
 
-export async function AdicionarImagem(id, imagem){
+export async function AdicionarImagem(imagem,id){
     const formData = new FormData();
     formData.append('img', imagem);
 
@@ -37,6 +37,5 @@ export async function AdicionarImagem(id, imagem){
             "Content-Type": "multipart/form-data"
         },
     });
-
     return resposta.status;
 }

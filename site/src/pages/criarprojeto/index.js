@@ -14,12 +14,15 @@ export default function Projeto(){
     const [categoria, setCategoria] = useState('');
     const [materiais, setMateriais] = useState('');
     const [imagem, setImagem] = useState();
+    const [id,setID] = useState(0);
 
     async function ProjClick(){
         try {
             const usuario = storage('usuario-logado').id;
             const novoprojeto = await CriarProjeto(nome, descricao, categoria, materiais, usuario);
-            const r = await AdicionarImagem(novoprojeto.id, imagem)
+             await AdicionarImagem(novoprojeto.id, imagem);
+
+             setID(novoprojeto.id)
 
             alert('O SEU PROJETO FOI CRIADO!')
 
@@ -84,13 +87,13 @@ export default function Projeto(){
 
             <aside class="subcont-2">
                 
-                    <div class="upload" onClick={pegarImg}>
-                    <input type='file' id='imgProjeto' onChange={e => setImagem(e.target.files)}/>
+                    <div className='upload' onClick={pegarImg}>
+                    <input type='file' id='imgProjeto' onChange={e => setImagem(e.target.files[0])}/>
                     <form className='form'>
                     <label for='form_input' className='form_label'>
 
                     {!imagem &&
-                        <img src="./assets/images/addimagem.png" alt='' className='form_icon'/>
+                        <img src="../images/addimagem.png" alt='' className='form_icon'/>
                     }
 
                     {imagem &&
