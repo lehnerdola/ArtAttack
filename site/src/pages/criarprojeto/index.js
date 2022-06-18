@@ -14,15 +14,12 @@ export default function Projeto(){
     const [categoria, setCategoria] = useState('');
     const [materiais, setMateriais] = useState('');
     const [imagem, setImagem] = useState();
-    const [id,setID] = useState(0);
 
     async function ProjClick(){
         try {
             const usuario = storage('usuario-logado').id;
             const novoprojeto = await CriarProjeto(nome, descricao, categoria, materiais, usuario);
-             await AdicionarImagem(novoprojeto.id, imagem);
-
-             setID(novoprojeto.id)
+            const r = await AdicionarImagem(novoprojeto.id, imagem)
 
             alert('O SEU PROJETO FOI CRIADO!')
 
