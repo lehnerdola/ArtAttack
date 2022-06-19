@@ -77,7 +77,7 @@ export default function Login() {
                     {erro}
                   </div>
                   <div className='ab'>
-                   <p className='desc-txt1'>
+                   <p className='desctxt'>
                    Ainda não criou a sua conta?
                   </p>
 

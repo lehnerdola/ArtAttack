@@ -120,11 +120,13 @@ export default function Perfil() {
                 <div class="s3">
                     <img src={`http://localhost:5000/${item.imagem}`} className="imagem" />
                                  
-                                        <p>Título:{item.nome}</p>
-                                        <p>Descrição: {item.descricao}</p>
-                                        <p>Categoria: {item.categoria}</p>
-                                        <p>Materiais: {item.materiais}</p>
-                    <button onClick={() => deletarProjeto(item.id, item.nome)}>Remover</button>
+                                        <p className='txt2'>Título:{item.nome}</p>
+                                        <p className='txt2'>Descrição: {item.descricao}</p>
+                                        <p className='txt2'>Categoria: {item.categoria}</p>
+                                        <p className='txt2'>Materiais: {item.materiais}</p>
+                    <button className='b-3-2' onClick={() => deletarProjeto(item.id, item.nome)}>Remover</button>
+                    <button className='b-3-1'>Alterar</button>
+
 
                 </div>
 )}

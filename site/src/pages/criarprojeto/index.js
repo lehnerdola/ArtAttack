@@ -50,9 +50,6 @@ export default function EnviarProjeto() {
                 toast.dark("O projeto foi cadastrado")
             }
           
-
-             
-            
         }
         catch(err){
             if(err.response)
@@ -120,6 +117,8 @@ export default function EnviarProjeto() {
                         <h4 className='titulo1'>Materiais utilizados:</h4>
                         <input type="text" placeholder="ex: paint, lightroom, figma, ilustrator" value={materiais} onChange={e => setMateriais(e.target.value)} className='inpdec2'/>
                     </p>
+
+                   
                 </div>
         
             </div>
@@ -146,8 +145,8 @@ export default function EnviarProjeto() {
                         </form>
                     </div>
             </aside>
-            <button onClick={SalvarClick} className='botao'> Salvar </button>
-            <button onClick={NovoClick}> NOVO </button>
+            <button onClick={SalvarClick} className='btpj'> Salvar </button>
+            <button onClick={NovoClick} className='btnv'> Novo </button>
             </div>
 
     </main>

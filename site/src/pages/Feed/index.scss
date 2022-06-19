@@ -26,36 +26,14 @@
     align-items: center;
   }
   
-  .modal-overlay {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-  
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .modal-content {
-    width: 90%;
-    max-width: 500px;
-    background-color: white;
-    padding: 10px;
-    border-radius: 5px;
-  }
-  
-
 .container4{
     display: flex;
     flex-direction: column;
     margin-top: 5em;
     justify-content: space-around;
     align-items: center;
-    background-color: #f8e8ee;
-
 }
+
 
 .sub1{
     display: flex;
@@ -106,7 +84,14 @@
     }
 
 .txt2{
+    margin-top: 0.9em;
+    margin-left: 5px;
+    font-family: 'attack7';
+}
+
+.txt2-1{
     text-align: center;
+    font-weight: bold;
     margin-top: 0.9em;
     margin-left: 5px;
     font-family: 'attack7';
@@ -122,9 +107,32 @@
     align-items: center;
 }
 
+.sub-1-2{
+    display: flex;
+    flex-direction: column;
+}
+
 .subsla{
 display: flex;
 flex-direction: column;
+justify-content: space-around;
+background-color: #f8e8ee;
+}
+.subsla3{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: #f8e8ee;
+    }
+
+.subsla4{
+    display: flex;
+    flex-direction: row;
+}
+
+.subsla2{
+    display: flex;
+    flex-direction: row;
 }
 
 .imgusuario{

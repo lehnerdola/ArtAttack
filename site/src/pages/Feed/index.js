@@ -17,6 +17,7 @@ export default function Feed() {
     const [perfil, setPerfil] = useState([]);
     const [filtro, setFiltro] = useState("");
     const id = storage('usuario-logado').id
+    const userLogado = storage('usuario-logado').nome
 
     async function Filtrar() {
 		const resp = await buscarProjetoPorNome(filtro);
@@ -30,7 +31,7 @@ export default function Feed() {
 	}
 
     async function perfilUsuarioInfo() {
-        const resp = await infoPerfil(id);
+        const resp = await todosPerfis();
         setPerfil(resp)
     }
 
@@ -68,10 +69,13 @@ export default function Feed() {
         <div className='ma'>
 
             <header className='container1'>
-
+                <div className='subsla4'>
                 <Link to="../perfil">
                     <img src='./images/64572.png' className='imgperfil' />
                 </Link>
+                <p className='txt2'>@{userLogado}</p>
+
+                </div>
                 <div className='bo1'>
                     <button className='b1-txt' onClick={sairClick}> Sair </button>
                 </div>
@@ -95,23 +99,25 @@ export default function Feed() {
                 {projetos.map (item =>
                 <div className='sub1'>
 
-<div className='sub-1-4'>
+<div className='subsla3'>
 
-
-<img src='./images/64572.png' className='imgusuario'>
+<div className='subsla2'>
+<img src='./images/64572.png' className='imgusuario' >
 </img>
-<p className='txt2'>{item.usuario}</p>
 </div>
-                    <div className='sub-1-2' key={item.id}>
+<p className='txt2-1' >{item.nome}</p>
+
+                    <div key={item.id}>
                         <div className='subsla'>
                             <img src={`http://localhost:5000/${item.imagem}`} className='img0' />
                             
-                            <p> {item.nome.substr(0, 18)}</p>
-                            <p>{item.descricao}</p>
-                            <p>{item.categoria}</p>
-                            <p>{item.materiais}</p>
+                            <p className='txt2'>Descrição:{item.descricao}</p>
+                            <p className='txt2'>Categoria:{item.categoria}</p>
+                            <p className='txt2'>Materiais:{item.materiais}</p>
+                            
                         </div>
 
+                        </div>
 
                            
 
