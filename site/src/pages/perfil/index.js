@@ -2,6 +2,7 @@ import './index.scss';
 import { Link, useNavigate } from 'react-router-dom';
 
 import { infoPerfil } from '../../api/usuarioAPI.js'
+import { listarMeusProjetos } from '../../api/projetoAPI';
 import { useState, useEffect } from 'react';
 import storage from 'local-storage'
 
@@ -9,11 +10,23 @@ export default function Perfil() {
 
     const idUsuario = storage('usuario-logado').id
     const [perfil, setPerfil] = useState([]);
+    const [projeto, setProjeto] = useState([]);
+    const navigate = useNavigate();
+
 
     async function perfilUsuarioInfo() {
         const resp = await infoPerfil(idUsuario);
         setPerfil(resp)
     }
+
+    async function listarProjetos() {
+		const resposta = await listarMeusProjetos(idUsuario);
+		setProjeto(resposta);
+	}
+
+    useEffect(() => {
+		listarProjetos();
+	}, []);
 
     useEffect(() => {
         perfilUsuarioInfo();
@@ -67,12 +80,18 @@ export default function Perfil() {
 
 
             
-
+                {projeto.map(item =>    
                 <div class="s3">
-                    <img src="./images/Screenshot_20220502-225108.png" class="imagem" />
+                    <img src={`http://localhost:5000/${item.imagem}`} className="imagem" />
+                    <p >{item.nome}</p>
+                    <p>{item.descricao}</p>
+                    <p>{item.categoria}</p>
+                    <p>{item.materiais}</p>
+
+
                     <input type="button" value="Remover" class="b-3" />
                 </div>
-
+)}
             </aside>
 
         </div>
