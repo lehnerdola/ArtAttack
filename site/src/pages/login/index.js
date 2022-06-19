@@ -70,15 +70,15 @@ export default function Login() {
                     required="required" type="password" placeholder="Insira a sua senha :)"  value={senha} onChange={ e => setSenha(e.target.value) }/> 
                   </p>
                   <p> 
-                    <button onClick={entrarClick}>Logar</button>
+                    <button onClick={entrarClick} className="logar">ENTRAR</button>
                   </p>
 
                   <div className='saa'>
                     {erro}
                   </div>
                   <div className='ab'>
-                   <p className='desc-txt'>
-                    Ainda não criou a sua conta?
+                   <p className='desc-txt1'>
+                   Ainda não criou a sua conta?
                   </p>
 
                     <Link to='../cadastro' >

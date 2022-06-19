@@ -3,160 +3,276 @@
     text-decoration: none;
   }
 
-  .img1{
-    margin-top: -20em;
-    width: 18em;
+  *{
+    margin-top: 0vh;
+    margin: 0%;
   }
-
-
-  .loginsub{
-    display: flex;
-    flex-direction: row;
-  }
-  
-  a.links{
-    display: none;
-    font-family: 'attack11';
-  }
-
-  .content{
-    width: 500px;
-  }
-
-  .tit-login{
-    font-family: 'attack9';
-  }
-
-  
-
-  .lab{
-    color: #000;
-    font-family: 'attack8';
-    font-weight: bold;
-  }
-
-  h1{
-    font-size: 48px;
-    color: #000000;
-    padding: 10px 0;
-    font-family: 'Playfair';
-    padding-bottom: 30px;
-  }
-  
-  
-  p{
-    margin-bottom:15px;
-    font-family: 'Koho-Regular';
-  }
-  
-  label{
-    color: #405c60;
-    position: relative;
-  }
-
- ::-webkit-input-placeholder {
-    color: #000000; 
-    font-family: 'Koho-Regular';
-  }
-
-  .email_login{
-    width: 95%;
-    margin-top: 4px;
-    padding: 10px;  
-    outline: none;
-    border: 1px solid #000000;
-    border-radius: 3px;
-  }
-  
-  input[type="submit"]{
-    width: 100%;
-    cursor: pointer;  
-    background: #000000;
-    padding: 8px 5px;
-    color: rgb(243, 171, 217);
-    font-size: 20px;  
-    border: 1px solid #fff; 
-    margin-bottom: 10px;  
-    text-shadow: 0 1px 1px #333;
-    border-radius: 5px;
-    font-family: 'attack11';
-  }
- 
-  .saa{
-    color: #000;
-  }
-
-  .desc-txt{
-    font-family: 'attack11';
-  }
-
-  .mod{
-    margin-left: 1em;
-    background-color: rgb(0, 0, 0);
-    border-radius: 5px;
-    font-family: 'attack11';
-    color: #fff;
-    padding: 0.5em;
-    transition: all 0.2s linear;
-
-  }
-
-  .mod:hover{
-    background-color: #fff;
-    color: rgb(243, 171, 217);
-  }
-
-  .subb-1{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .cadastro, 
-  .login{
-    top: 0px;
-    width: 88%; 
-    padding: 18px 2em 60px 2em;
-    border-radius: 5px;
-    margin-top: 3em;
-    margin-left: 5em;
-  }
-
-  
-@media screen and (min-width: 300px) and (max-width: 480px){
- 
   .corzinha2{
-    height: 70em;
-    width: 30em;
+    background-color: #cc96d1;
+    height: 45em;
+    padding-top: 0.4em;
   }
-
-  .loginsub{
+  
+  .ab{
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    margin-left: -5em;
+    flex-direction: row;
+    font-family: 'attack2';
   }
-
-  .img1{
-    margin-top: 2em;
-    margin-left: 1em;
-    width: 15em;
-    margin-bottom: 0px;
+    
+    .b-voltar{
+      background-color: #9db1fa;
+      padding: 0.5em;
+      width: 5em;
+      border-radius: 20px;
+      text-align: center;
+      border:#0027b4 1px solid;
+      margin-top: 2em;
+      margin-left: 2em;
+    }
+  
+    .textin{
+      color: #fff;
+      font-family: 'attack11';
+    }
+  
+    .loginsub{
+      display: flex;
+      flex-direction: column;
+    }
+  .b-voltar:hover{
+    background-color: #b2a4f0;
   }
+    a{
+      text-decoration: none;
+    }
+  
+    .img1{
+        margin-left: 60em;
+        width: 15em;
+    }
+    
+    a.links{
+      display: none;
+    }
+    
+    .conf{
+      margin-top: 2em;
+    }
+  
+    .content{
+      width: 500px;
+      
+      position: relative; 
+    }
+    .content-1{
+      width: 500px;
+      margin: 5em 5em;
+      position: relative; 
+    }
+  
+    .lab{
+      color: #000;
+      font-family: 'Koho-Regular';
+      font-weight: bold;
+    }
+  
+    h1{
+      font-size: 48px;
+      color: #000000;
+      padding: 10px 0;
+      font-family: 'Playfair';
+      padding-bottom: 30px;
+    }
+    
+    
+    p{
+      margin-bottom:15px;
+      font-family: 'Koho-Regular';
+    }
+    
+    label{
+      color: #405c60;
+      position: relative;
+    }
+  
+   ::-webkit-input-placeholder {
+      color: #000000; 
+      font-family: 'Koho-Regular';
+    }
+  
+    input{
+      width: 95%;
+      margin-top: 4px;
+      padding: 10px;  
+      outline: none;
+      border: 1px solid #000000;
+      border-radius: 3px;
+      background-color: #fff;
+    }
+    
+   
+   
+    
+    .link{
+      position: absolute;
+      color: #000;
+      left: 0px;
+      height: 20px;
+      width: 440px;
+      padding: 17px 34px 20px 30px;
+      font-size: 16px;
+      text-align: center;
+    }
+    .link a {
+      background: #000;
+      padding: 6px;
+      color:#fff;
+      margin-left: 10px;
+      box-shadow: 0px 1px 4px 0px rgba(168, 168, 168, 0.6) inset;
+      font-family: 'Koho-Regular';
+      border-radius: 4px;  
+    
+      -webkit-transition: all 0.4s linear;
+      transition: all 0.4s  linear;
+    }
+    .link a:hover {
+      color: #f587ff;
+      background: #f7f7f7;
+    }
+  
+    .br{
+      border: none;
+    }
+  
+    .cadastro, 
+    .login{
+      box-sizing: border-box;
+      position: absolute;
+      top: 0px;
+      width: 88%; 
+      padding: 18px 2em 60px 2em;
+      margin: 0px 0px 35px 0px;
+      border-radius: 5px;
+      
+    }
+  
+    @media screen and (min-width: 300px) and (max-width: 480px){
+   
+      .corzinha2{
+        height: 65em;
+        width: 30em;
+      }
+    
+      .loginsub{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin-left: -5em;
+      }
+    
+      .mod{
+        margin-right: -5em;
+      }
+  
+      .img1{
+        margin-top: 2em;
+        margin-left: 1em;
+        width: 15em;
+        margin-bottom: 0px;
+      }
+    
+      .email_login1{
+        display: flex;
+        flex-direction: column;
+        width: 18em;
+      }
+    
+      .ab{
+        display: flex;
+        flex-direction: column;
+      }
+  
+      .subb-1{
+        display: flex;
+        flex-direction: column;
+        margin-left: -11em;
+        justify-content: flex-start;
+      }
+    
+    }
+    .logar{
+      width: 441px;
+height: 44px;
+left: 183px;
+top: 426px;
 
-  .email_login2{
-    display: flex;
-    flex-direction: column;
-    width: 18em;
-  }
+background: #D3CCF1;
+    }
+    .logar:hover{
+      width: 441px;
+      height: 44px;
+      left: 183px;
+      top: 426px;
+      
+      background: #b2a4f0;
+    }
 
-  .subb-1{
-    display: flex;
-    flex-direction: column;
-    margin-left: -11em;
-    justify-content: flex-start;
-  }
+    .email_login1{
+      display: flex;
+      flex-direction: column;
+      width: 421px;
+height: 24px;
+left: 18px;
+top: 426px;
 
+background: #F3F7F9;
+    }
 
-}
+    .mod{
+      box-sizing: border-box;
+      border-radius: 25px;
+      width: 140px;
+      height: 90px;
+      left: 438px;
+      top: 499px;
+      padding: 0.4em 0.4em 0.4em 0.4em;
+      margin: 8px 129px 5px;
+      color: #ffff;
+      background: #000000;
+      border: 1px solid #000000;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+          }
+  
+          .mod:hover{
+            box-sizing: border-box;
+            border-radius: 25px;
+            width: 140px;
+            height: 90px;
+            left: 438px;
+            top: 499px;
+            padding: 0.4em 0.4em 0.4em 0.4em;
+            margin: 8px 129px 5px;
+            color: rgb(0, 0, 0);
+            background: #f7f7f7;
+            border: 1px solid #000000;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+                }
+     .desc-txt1{
+      font-family: "attack8";
+      white-space: nowrap;
+      overflow: hidden;
+            text-overflow: ellipsis;
+     }   
+     
+     .subb-1{
+      display: flex;
+      flex-direction: column;
+      margin-left: -11em;
+      justify-content: flex-start;
+      margin-top: -21em;
+    }
+  

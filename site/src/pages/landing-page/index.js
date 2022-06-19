@@ -8,23 +8,23 @@ export default function LP() {
 
             <main className="faixas">
 
-                <section className="containeraa">
-
-                    <div className='sub-1' >
-
+                <section className="container">
+                    <div className='sub1' >
 
                         <img src='../images/Logotipo.png' className='imgaa'></img>
-                        <div className="btcont">
-                            <Link to='../login'>
-                             <a className="b0"> Login </a>
-                             </Link>
 
-                             <Link to='../cadastro'>
-                            <a className='b1'>Cadastre-se</a>
+                        <div className="btcont">
+                          <Link to='../login'>
+                            <div>
+                             <a className="botao0" id="demo1" > Login </a>
+                            </div>
+                          </Link>
+
+                          <Link to='../cadastro'>
+                            <a className='botao1' id="demo2">Cadastre-se</a>
                             </Link>
                             
-                             </div>
-
+                        </div>
                     </div>
 
 
@@ -39,10 +39,6 @@ export default function LP() {
                         </div>
                         <div> <img src='../images/Cool Kids - Brainstorming.png' className='imgbr'></img> </div>
                     </div>
-
-
-
-
                 </section>
 
                 <section className="sub-3">
@@ -52,12 +48,12 @@ export default function LP() {
                         <p className='desc21'>Divulgue sua arte através de uma simples postagem, aceitamos divulgação por interesses financeiros, apenas deixe suas informações na obra para que os valorizadores de arte possam buscá-lo para uma colaboração futura!</p>
                     </div>
 
-                    <div className="cards">
-                        <div class="card-1">
+                    <div className="cards" >
+                        <div class="card-1" id= "demo3">
                             <img src='../images/1dbe50dd-b345-4113-9785-51d8247e43a1.jpg' className='img222' />
                         </div>
 
-                        <div class="card-2">
+                        <div class="card-2" id="demo3">
                             <img src='../images/Soft One.jpg' className='img222' />
                         </div>
                     </div>
@@ -131,7 +127,7 @@ export default function LP() {
                         <div className='sub-6-2'>
 
                             <div>
-                                <img src='../images/Screenshot_20220427-093800-488.png' className='img6'></img>
+                                <img src='../images/Screenshot_20220427-093800-488.png' className='img6' id="demo4"></img>
                             </div>
 
                             <div>
@@ -177,7 +173,7 @@ export default function LP() {
 
                     <div >
 
-                        <p className='txt-9'>Art Attack</p>
+                        <p className='txt-9'>Art Attack contato </p>
                         <p className='txt-9'>artattack@gmail.com</p>
                         <p className='txt-9'>(11) 99999-9999</p>
 
