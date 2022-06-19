@@ -1,17 +1,53 @@
 import './index.scss';
 import { Link, useNavigate } from 'react-router-dom';
-
-import { infoPerfil } from '../../api/usuarioAPI.js'
-import { listarMeusProjetos } from '../../api/projetoAPI';
-import { useState, useEffect } from 'react';
 import storage from 'local-storage'
 
+import { infoPerfil } from '../../api/usuarioAPI.js'
+import { listarMeusProjetos, removerProjeto } from '../../api/projetoAPI';
+import { useState, useEffect } from 'react';
+import { confirmAlert } from "react-confirm-alert";
+import { toast } from 'react-toastify';
+import Modal from 'react-modal';
+Modal.setAppElement("#root");
+
+
+
 export default function Perfil() {
+    const [modalIsOpen, setIsOpen] = useState(false);
+
+    function openModal() {
+        setIsOpen(true);
+    }
+
+    function closeModal() {
+        setIsOpen(false);
+    }
 
     const idUsuario = storage('usuario-logado').id
     const [perfil, setPerfil] = useState([]);
     const [projeto, setProjeto] = useState([]);
     const navigate = useNavigate();
+
+    async function deletarProjeto(id, nome) {
+		confirmAlert({
+			title: "Remover projeto",
+			message: `Deseja remover o projeto ${nome}` ,
+			buttons: [
+				{
+					label: "Sim",
+					onClick: async () => {
+						const resposta = await removerProjeto(id, nome);
+						listarProjetos();
+						toast.success("🔥 Projeto " + nome + " removido!");
+					},
+				},
+
+				{
+					label: "Não",
+				},
+			],
+		});
+	}
 
 
     async function perfilUsuarioInfo() {
@@ -83,13 +119,22 @@ export default function Perfil() {
                 {projeto.map(item =>    
                 <div class="s3">
                     <img src={`http://localhost:5000/${item.imagem}`} className="imagem" />
-                    <p >{item.nome}</p>
-                    <p>{item.descricao}</p>
-                    <p>{item.categoria}</p>
-                    <p>{item.materiais}</p>
+                    <img src='./images/Gold-Star-PNG-Transparent-Image.png' className='star' onClick={openModal} />
+                                    <Modal
+                                        isOpen={modalIsOpen}
+                                        onRequestClose={closeModal}
+                                        contentLabel="Example Modal"
+                                        overlayClassName="modal-overlay"
+                                        className="modal-content"
+                                    >
+                                        <p>Título:{item.nome}</p>
+                                        <p>Descrição: {item.descricao}</p>
+                                        <p>Categoria: {item.categoria}</p>
+                                        <p>Materiais: {item.materiais}</p>
+                                    <button onClick={closeModal}>fechar</button>  
+                                    </Modal>
+                    <button onClick={() => deletarProjeto(item.id, item.nome)}>Remover</button>
 
-
-                    <input type="button" value="Remover" class="b-3" />
                 </div>
 )}
             </aside>

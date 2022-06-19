@@ -4,6 +4,9 @@ const api = axios.create({
     baseURL: 'http://localhost:5000'
 })
 
+export function buscarImagem(imagem) {
+	return `${api.getUri()}/${imagem}`;
+}
 
 export async function todosProjetos( ) {
     const resposta = await api.get('/projeto');
@@ -15,7 +18,10 @@ export async function listarMeusProjetos(id) {
 	return resposta.data;
 }
 
-
+export async function removerProjeto(id) {
+	const resposta = await api.delete(`/projeto/${id}`);
+	return resposta.status;
+}
 
 export async function buscarProjetoPorNome(nome) {
     const resposta = await api.get(`/projeto/busca?nome=${nome}`);
