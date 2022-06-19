@@ -1,4 +1,4 @@
-import { InserirProjeto, alterarProjeto, consultarProjetos,buscarporNome,consultarProjetosPorId,buscarPorCategoria, ApagarProjeto, AdicionarImagem } from '../Repository/projetoRepository.js';
+import { InserirProjeto, alterarProjeto, consultarProjetos,buscarporNome,consultarProjetosPorId,buscarPorCategoria, ApagarProjeto, AdicionarImagem, exibirProjetosUsuario } from '../Repository/projetoRepository.js';
 
 import multer from 'multer'
 const upload = multer({ dest: 'storage/projetos' })
@@ -97,6 +97,20 @@ server.get('/projeto/:id', async (req, resp) => {
             erro: err.message
         })
     }    
+})
+
+server.get('/projeto/usuario/:id', async (req,resp) => {
+	try{
+		const {id} = req.params;
+		const resposta = await exibirProjetosUsuario(id);
+		if(!resposta) throw new Error('Produto não encotrado')
+		else
+		resp.status(200).send(resposta);
+	} catch(err){
+        resp.status(400).send({
+            erro: err.message
+        })
+	}
 })
 
 server.put('/alterar/:id', async (req,resp) => {

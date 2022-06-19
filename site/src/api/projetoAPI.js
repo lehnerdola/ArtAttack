@@ -10,6 +10,12 @@ export async function todosProjetos( ) {
     return resposta.data; 
 }
 
+export async function listarMeusProjetos(id) {
+	const resposta = await api.get(`/projeto/usuario/${id}`);
+	return resposta.data;
+}
+
+
 
 export async function buscarProjetoPorNome(nome) {
     const resposta = await api.get(`/projeto/busca?nome=${nome}`);

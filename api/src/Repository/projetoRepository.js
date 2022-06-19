@@ -38,6 +38,7 @@ export async function consultarProjetosPorId(id){
     const comando = 
     `
     SELECT id_projeto	id,
+       id_usuario       usuario,
 	   nm_projeto		nome,
        ds_projeto		descricao,
        ds_categoria		categoria,
@@ -48,6 +49,21 @@ export async function consultarProjetosPorId(id){
   `;
     const [linhas] = await con.query(comando, [id]);
     return linhas;
+}
+
+export async function exibirProjetosUsuario(id){
+	const comando = `
+	SELECT id_projeto			   id,
+       id_usuario                  usuario,
+	   nm_projeto                  nome,
+       ds_projeto                  descricao,
+       ds_categoria                categoria,
+       ds_materiais                materiais,
+       img_projeto                 imagem
+  FROM tb_projeto
+ WHERE id_usuario		= ?`
+	const [linhas] = await con.query(comando, id)
+	return linhas
 }
 
 export async function buscarporNome(nome){
