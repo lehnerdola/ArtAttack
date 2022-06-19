@@ -84,7 +84,7 @@ export default function Cad() {
 
 
              <p> 
-               <button onClick={salvarClick}>Cadastrar</button> 
+               <button onClick={salvarClick} className="cadastrar">Cadastrar</button> 
              </p>
 
               <div className='subb1' >
