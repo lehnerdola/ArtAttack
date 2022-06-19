@@ -1,8 +1,10 @@
-import {login, consultarperfil, alterarperfil, buscarPerfil, buscarPerfilPorId, deletarperfil, fazerCadastro } from '../Repository/usuarioRepository.js'
+import {login, consultarperfil, alterarperfil, buscarPerfil, buscarPerfilPorId, deletarperfil, fazerCadastro, AdicionarImagem, todosPerfil } from '../Repository/usuarioRepository.js'
 
 import { Router } from 'express';
 const server = Router();
 
+import multer from 'multer'
+const upload = multer({ dest: 'storage/perfil' })
 
 server.post('/usuario/login', async (req, resp) => {
     try {
@@ -21,6 +23,18 @@ server.post('/usuario/login', async (req, resp) => {
         });
     }
 })
+
+server.get('/perfil', async (req, resp) => {
+    try {
+        const resposta = await todosPerfil();
+        resp.send(resposta);
+    } catch (err) {
+        resp.status(404).send({
+            erro: err.message
+        })
+    }    
+})
+
 
 server.post('/cadastro', async (req, resp) => {
     try {
@@ -41,6 +55,25 @@ server.post('/cadastro', async (req, resp) => {
     }
 
 })
+
+server.put('/perfil/:id/img', upload.single('img') , async (req, resp) => {
+    try {
+        const { id } = req.params;
+        const imagem = req.file.path;
+
+        const resposta = await AdicionarImagem(imagem, id);
+        if (resposta != 1) {
+            throw new Error('tem alguma coisa errada ai amigão')
+        }
+
+        resp.status(204).send();
+    } catch (err) {
+        resp.status(400).send({
+            erro:err.message
+        })
+    }
+})
+
 
 server.get('/perfil/:id' , async (req, resp) => {
     try{

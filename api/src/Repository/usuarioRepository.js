@@ -24,7 +24,8 @@ export async function login(email, senha) {
                 NM_USUARIO      nome,  
                 DS_OCUPACAO     ocupacao, 
                 DS_BIOGRAFIA    bio, 
-                DS_CONTATO      ctt 
+                DS_CONTATO      ctt, 
+                img_perfil      img
         FROM tb_usuario 
        WHERE id_usuario = ?
      `;
@@ -32,6 +33,22 @@ export async function login(email, senha) {
 const [linhas] = await con.query(comando, [id])
 return linhas;
 
+ }
+
+ export async function todosPerfil(){
+    const comando =
+    `
+    SELECT
+        id_usuario id,
+		NM_USUARIO nome,  
+        DS_OCUPACAO ocupacao, 
+        DS_BIOGRAFIA bio,
+        ds_email email,
+        DS_CONTATO ctt, 
+        IMG_PERFIL imagem
+FROM tb_usuario `
+const [linhas] = await con.query(comando);
+return linhas;
  }
 
  export async function buscarPerfil(nome){
@@ -59,7 +76,8 @@ SELECT id_usuario       id,
 		NM_USUARIO      nome,  
         DS_OCUPACAO     ocupacao, 
         DS_BIOGRAFIA    bio, 
-        DS_CONTATO      ctt 
+        DS_CONTATO      ctt ,
+        img_perfil   imagem
 FROM tb_usuario 
 WHERE id_usuario = ? 
     `;
@@ -78,7 +96,7 @@ return linhas;
      SET nm_usuario =   ?,  
          DS_OCUPACAO =  ?, 
          DS_BIOGRAFIA = ?, 
-         DS_CONTATO =   ?  
+         DS_CONTATO =   ?
    WHERE id_usuario =   ?
    `;
    const [resposta] = await con.query (comando, [perfil.nome, perfil.ocupacao, perfil.bio, perfil.ctt, id])
@@ -108,4 +126,15 @@ export async function fazerCadastro(usuario)
     usuario.id = resposta.insertId;
 
     return usuario;
+}
+
+export async function AdicionarImagem(imagem, id) {
+    const comando = 
+    `
+    UPDATE tb_usuario 
+    SET img_perfil      =  ?
+    WHERE id_usuario     = ?
+    `;
+    const [resposta] = await con.query(comando, [imagem, id]);
+    return resposta.affectedRows;
 }

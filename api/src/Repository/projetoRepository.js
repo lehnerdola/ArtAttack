@@ -16,14 +16,11 @@ export async function alterarProjeto(id,projeto){
     return resposta.affectedRows;
 }
 
-
-
-
 export async function consultarProjetos(){
     const comando = 
     `
     SELECT id_projeto	id,
-        id_usuario usuario,
+        id_usuario      usuario,
 	   nm_projeto		nome,
        ds_projeto		descricao,
        ds_categoria		categoria,

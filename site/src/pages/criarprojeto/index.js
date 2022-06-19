@@ -26,7 +26,6 @@ export default function EnviarProjeto() {
     const [categoria, setCategoria] = useState('');
     const [materiais,setMateriais] = useState('');
     const [img, setImg] = useState();
-    const UserLogado = storage('usuario-logado').Nome;
     const [id, setId] = useState(0);
 
     async function SalvarClick(){

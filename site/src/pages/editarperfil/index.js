@@ -1,7 +1,7 @@
 import './index.scss';
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { alterarPerfil, infoPerfil } from '../../api/usuarioAPI';
+import { alterarPerfil, infoPerfil, enviarimagem } from '../../api/usuarioAPI';
 import storage from 'local-storage'
 
 export default function EditarPerfil() {
@@ -10,6 +10,7 @@ export default function EditarPerfil() {
     const [ocupacao, setOcupacao] = useState('');
     const [bio, setBio] = useState('');
     const [ctt, setCtt] = useState('');
+    const [img, setImg] = useState();
     const id = storage('usuario-logado').id
 
 
@@ -31,14 +32,24 @@ export default function EditarPerfil() {
 
     async function salvarClickPerfil() {
         try {
-            const r = await alterarPerfil(id, nome, ocupacao, bio, ctt);
+            const alterar = await alterarPerfil(id, nome, ocupacao, bio, ctt);
+            const r = await enviarimagem (id, img)
+            
             alert('perfil alterado')
+
 
         } catch (err) {
             alert(err.message)
         }
     }
 
+    function escolherimg (){
+        document.getElementById('img').click();
+    }
+
+  function mostrarImagem(){
+        return URL.createObjectURL(img);
+  }
 
 
     return (
@@ -56,15 +67,24 @@ export default function EditarPerfil() {
             <section class="con1">
 
                 <div className='nsei'>
-                    <div class="max-width">
-                        <form className='form'>
-                            <label for='form_input' className='form_label'>
-                                <img src="./images/camera-removebg-preview.png" className='form_icon' />
-                                <input type="file" id='form_input' className='form_input' />
-                            </label>
+                <div className='upload' onClick={escolherimg}>
+                    <input type='file' id='img' onChange={e => setImg(e.target.files[0])}/>
+                    <form className='form'>
+                    <label for='form_input' className='form_label'>
+
+                    {!img &&
+                        <img src="../images/addimagem.png" alt='' className='form_icon'/>
+                    }
+
+                    {img &&
+                        <img className="img-projeto" src={mostrarImagem()} alt=''/>
+                    }
+                    <input type="file" id='form_input'className='form_input'/>
+
+                        </label>
                         </form>
                     </div>
-                </div>
+                    </div>
 
                 <div>
                     <input type="file" id="Imagem" name="Imagem" accept="image/*" />

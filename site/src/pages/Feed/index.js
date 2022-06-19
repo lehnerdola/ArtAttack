@@ -7,30 +7,32 @@ import storage from 'local-storage'
 import { useNavigate } from 'react-router-dom';
 
 import { buscarProjetoPorNome, todosProjetos } from '../../api/projetoAPI.js'
+import { infoPerfil,todosPerfis } from '../../api/usuarioAPI';
 import { useEffect, useState } from 'react';
-
-Modal.setAppElement("#root");
-
 
 
 
 export default function Feed() {
-    const [modalIsOpen, setIsOpen] = useState(false);
-    const [projetos, setProjetos] = useState([])
+    const [projetos, setProjetos] = useState([]);
+    const [perfil, setPerfil] = useState([]);
+    const [filtro, setFiltro] = useState("");
+    const id = storage('usuario-logado').id
+
+    async function Filtrar() {
+		const resp = await buscarProjetoPorNome(filtro);
+		setProjetos(resp);
+	}
+
 
     async function carregarTodosProjetos() {
 		const resp = await todosProjetos();
 		setProjetos(resp);
 	}
 
-    function openModal() {
-        setIsOpen(true);
+    async function perfilUsuarioInfo() {
+        const resp = await infoPerfil(id);
+        setPerfil(resp)
     }
-
-    function closeModal() {
-        setIsOpen(false);
-    }
-
 
     function sairClick() {
         storage.remove('usuario-logado');
@@ -47,10 +49,19 @@ export default function Feed() {
     }, [])
 
     useEffect(() => {
+		Filtrar();
+	}, [filtro]);
+
+
+    useEffect(() => {
 		setTimeout(() => {
 			carregarTodosProjetos();
-		}, 5000)
+		},)
 	}, []);
+
+    useEffect(() => {
+        perfilUsuarioInfo();
+    }, [])
 
     return (
 
@@ -59,7 +70,7 @@ export default function Feed() {
             <header className='container1'>
 
                 <Link to="../perfil">
-                    <img src='./images/Screenshot_20220502-223132-694.png' className='imgperfil' />
+                    <img src='./images/64572.png' className='imgperfil' />
                 </Link>
                 <div className='bo1'>
                     <button className='b1-txt' onClick={sairClick}> Sair </button>
@@ -74,7 +85,7 @@ export default function Feed() {
                 </div>
 
                 <div>
-                    <input type='search' placeholder='Pesquisar todos os projetos' className='busca'></input>
+                    <input type='search' placeholder='Pesquisar todos os projetos' className='busca' Value={filtro} onChange={(e) => setFiltro(e.target.value)}></input>
                 </div>
             </nav>
 
@@ -86,18 +97,19 @@ export default function Feed() {
 
 <div className='sub-1-4'>
 
+
 <img src='./images/64572.png' className='imgusuario'>
 </img>
-<p className='txt2'>usuario1</p>
-
+<p className='txt2'>{item.usuario}</p>
 </div>
-                    <div className='sub-1-2'>
+                    <div className='sub-1-2' key={item.id}>
                         <div className='subsla'>
                             <img src={`http://localhost:5000/${item.imagem}`} className='img0' />
                             
                             <p> {item.nome.substr(0, 18)}</p>
                             <p>{item.descricao}</p>
                             <p>{item.categoria}</p>
+                            <p>{item.materiais}</p>
                         </div>
 
 

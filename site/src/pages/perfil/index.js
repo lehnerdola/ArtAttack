@@ -23,7 +23,7 @@ export default function Perfil() {
         setIsOpen(false);
     }
 
-    const idUsuario = storage('usuario-logado').id
+    const id = storage('usuario-logado').id
     const [perfil, setPerfil] = useState([]);
     const [projeto, setProjeto] = useState([]);
     const navigate = useNavigate();
@@ -51,12 +51,12 @@ export default function Perfil() {
 
 
     async function perfilUsuarioInfo() {
-        const resp = await infoPerfil(idUsuario);
+        const resp = await infoPerfil(id);
         setPerfil(resp)
     }
 
     async function listarProjetos() {
-		const resposta = await listarMeusProjetos(idUsuario);
+		const resposta = await listarMeusProjetos(id);
 		setProjeto(resposta);
 	}
 
@@ -87,7 +87,7 @@ export default function Perfil() {
 
                 {perfil.map(item =>
                     <div class="s1">
-                        <img src="./images/Screenshot_20220502-223132-694.png" className='imgusu' />
+                        <img src= './images/64572.png   ' className='imgusu' />
                         <p className='txt-perfil'>@{item.nome}</p>
                         <p className='txt-perfil2'>{item.ocupacao}</p>
                         <p className='txt-perfil2'>{item.bio}</p>
@@ -119,20 +119,11 @@ export default function Perfil() {
                 {projeto.map(item =>    
                 <div class="s3">
                     <img src={`http://localhost:5000/${item.imagem}`} className="imagem" />
-                    <img src='./images/Gold-Star-PNG-Transparent-Image.png' className='star' onClick={openModal} />
-                                    <Modal
-                                        isOpen={modalIsOpen}
-                                        onRequestClose={closeModal}
-                                        contentLabel="Example Modal"
-                                        overlayClassName="modal-overlay"
-                                        className="modal-content"
-                                    >
+                                 
                                         <p>Título:{item.nome}</p>
                                         <p>Descrição: {item.descricao}</p>
                                         <p>Categoria: {item.categoria}</p>
                                         <p>Materiais: {item.materiais}</p>
-                                    <button onClick={closeModal}>fechar</button>  
-                                    </Modal>
                     <button onClick={() => deletarProjeto(item.id, item.nome)}>Remover</button>
 
                 </div>
