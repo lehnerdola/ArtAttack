@@ -7,11 +7,12 @@ export async function alterarProjeto(id,projeto){
     SET NM_PROJETO = ?, 
     DS_PROJETO = ?, 
     DS_CATEGORIA = ?, 
-    DS_MATERIAIS = ?
+    DS_MATERIAIS = ?,
+    ID_USUARIO   = ?
   WHERE id_projeto = ?
     `
 
-    const [resposta] = await con.query (comando, [projeto.nome, projeto.descricao, projeto.categoria, projeto.materiais, id])
+    const [resposta] = await con.query (comando, [projeto.nome, projeto.descricao, projeto.categoria, projeto.materiais,projeto.usuario, id])
     return resposta.affectedRows;
 }
 

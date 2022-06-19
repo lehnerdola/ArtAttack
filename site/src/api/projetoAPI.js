@@ -28,14 +28,26 @@ export async function CriarProjeto(nome, descricao, categoria, materiais, usuari
     return r.data;
 } 
 
-export async function AdicionarImagem(imagem,id){
+export async function enviarimagem (id, imagem){
     const formData = new FormData();
     formData.append('img', imagem);
-
-    const resposta = await api.put(`/projeto/${id}/img`, formData, {
-        headers: {
-            "Content-Type": "multipart/form-data"
+    
+    const resposta = await api.put(`/projeto/${id}/img` , formData, {
+        headers:{
+            "Content-Type": "multipart/form-data" 
         },
     });
     return resposta.status;
+}
+
+export async function AlterarProjeto(id, nome,  descricao, categoria, materiais, usuario){
+    const respota = await api.put(`/alterar${id}`, {
+     usuario: usuario,
+     nome: nome,
+     descricao: descricao,
+     categoria:categoria,
+     materiais: materiais
+    })
+    return respota.data;
+
 }

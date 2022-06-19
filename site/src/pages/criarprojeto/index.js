@@ -2,39 +2,84 @@
 import './index.scss';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import { toast } from 'react-toastify';
+import {useEffect} from 'react'
+import { useNavigate } from 'react-router-dom';
+
 
 import storage from 'local-storage'
 
-import { CriarProjeto, AdicionarImagem } from '../../api/projetoAPI';
+import { AlterarProjeto, CriarProjeto, enviarimagem } from '../../api/projetoAPI';
 
-export default function Projeto(){
+
+
+export default function EnviarProjeto() {
+    const navigate = useNavigate();
+    useEffect(() => {
+        if(!storage('usuario-logado')){
+            navigate('/login');
+        }
+    }, [])
 
     const [nome, setNome] = useState('');
     const [descricao, setDescricao] = useState('');
     const [categoria, setCategoria] = useState('');
-    const [materiais, setMateriais] = useState('');
-    const [imagem, setImagem] = useState();
+    const [materiais,setMateriais] = useState('');
+    const [img, setImg] = useState();
+    const UserLogado = storage('usuario-logado').Nome;
+    const [id, setId] = useState(0);
 
-    async function ProjClick(){
-        try {
+    async function SalvarClick(){
+        try{
+            if(!img) throw new Error('Escolha a imagem do Post')
+
             const usuario = storage('usuario-logado').id;
-            const novoprojeto = await CriarProjeto(nome, descricao, categoria, materiais, usuario);
-            const r = await AdicionarImagem(novoprojeto.id, imagem)
+            console.log(usuario)
 
-            alert('O SEU PROJETO FOI CRIADO!')
+            if(id === 0){ 
 
-        } catch (err) {
-            alert(err.message)
+            const NovoPost = await CriarProjeto(nome, descricao, categoria, materiais, usuario)
+            const r = await enviarimagem (NovoPost.id, img)
+            toast.dark("O projeto foi cadastrado ")
+
+            setId(NovoPost.id);
+            }
+
+            else{
+                const NovoPost = await AlterarProjeto(id,nome, descricao, categoria, materiais, usuario)
+                const r = await enviarimagem(id, img)
+                toast.dark("O projeto foi cadastrado")
+            }
+          
+
+             
+            
+        }
+        catch(err){
+            if(err.response)
+            toast.dark(err.response.data.Erro)
+            else{
+                toast.dark(err.message)
+            }
         }
     }
 
-    function pegarImg(){
-        document.getElementById('imgProjeto').click();
+    function escolherimg (){
+        document.getElementById('img').click();
     }
 
-    function mostrarImg(){
-        return URL.createObjectURL(imagem);
-    }
+  function mostrarImagem(){
+        return URL.createObjectURL(img);
+  }
+
+
+  function NovoClick(){
+    setId(0);
+    setNome('');
+    setDescricao('');
+    setCategoria();
+    setMateriais('');
+  }
 
     
 
@@ -84,17 +129,17 @@ export default function Projeto(){
 
             <aside class="subcont-2">
                 
-                    <div className='upload' onClick={pegarImg}>
-                    <input type='file' id='imgProjeto' onChange={e => setImagem(e.target.files[0])}/>
+                    <div className='upload' onClick={escolherimg}>
+                    <input type='file' id='img' onChange={e => setImg(e.target.files[0])}/>
                     <form className='form'>
                     <label for='form_input' className='form_label'>
 
-                    {!imagem &&
+                    {!img &&
                         <img src="../images/addimagem.png" alt='' className='form_icon'/>
                     }
 
-                    {imagem &&
-                        <img className="img-projeto" src={mostrarImg()} alt=''/>
+                    {img &&
+                        <img className="img-projeto" src={mostrarImagem()} alt=''/>
                     }
                     <input type="file" id='form_input'className='form_input'/>
 
@@ -102,7 +147,8 @@ export default function Projeto(){
                         </form>
                     </div>
             </aside>
-                <button onClick={ProjClick} className='btpj'>Enviar projeto</button>
+            <button onClick={SalvarClick} className='botao'> Salvar </button>
+            <button onClick={NovoClick}> NOVO </button>
             </div>
 
     </main>
