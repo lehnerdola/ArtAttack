@@ -8,9 +8,18 @@
     margin: 0%;
   }
   .corzinha2{
-    background-color: #cc96d1;
-    height: 45em;
+    background-color: #ddc8ff;
+    height: 56.9em;
     padding-top: 0.4em;
+  }
+
+  .imgpc{
+    width: 20em;
+  }
+
+  .sub{
+    margin-top: -25em;
+    margin-left: 50em;
   }
   
   .ab{
@@ -51,10 +60,7 @@
       text-decoration: none;
     }
   
-    .img1{
-        margin-left: 60em;
-        width: 15em;
-    }
+
     
     a.links{
       display: none;
@@ -195,6 +201,7 @@
       .ab{
         display: flex;
         flex-direction: column;
+        width: 100em;
       }
   
       .subb-1{
@@ -248,6 +255,8 @@ background: #F3F7F9;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      margin-right: -10em;
+      font-family: 'attack11';
           }
   
           .mod:hover{
@@ -265,6 +274,10 @@ background: #F3F7F9;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+            margin-right: -10em;
+            font-family: 'attack11';
+
+
                 }
      .desc-txt1{
       font-family: "attack8";

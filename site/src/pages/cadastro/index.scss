@@ -212,7 +212,7 @@ top: 426px;
 background: #F3F7F9;
   }
 
-  .mod{
+  .mod1{
     box-sizing: border-box;
     border-radius: 25px;
     width: 140px;
@@ -227,9 +227,10 @@ background: #F3F7F9;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    margin-top: -15em;
         }
 
-        .mod:hover{
+        .mod1:hover{
           box-sizing: border-box;
           border-radius: 25px;
           width: 140px;
@@ -244,6 +245,8 @@ background: #F3F7F9;
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
+          margin-top: -15em;
+
               }
 
               .desc-txt{

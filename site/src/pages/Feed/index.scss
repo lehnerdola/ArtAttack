@@ -1,6 +1,7 @@
 .ma{
     background-color: #f8e8ee;
-
+    width: 100%;
+    height: 100%;
 }
 
 .container1{
@@ -16,8 +17,6 @@
     justify-content: center;
     align-items: center;
     margin-top: 2em;
-    background-color: #f8e8ee;
-
 }
 
 .container {
@@ -121,13 +120,17 @@ background-color: #f8e8ee;
 .subsla3{
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: space-around;
     background-color: #f8e8ee;
+    width: 100%;
     }
 
 .subsla4{
     display: flex;
     flex-direction: row;
+    background-color: #f8e8ee;
+    margin-top: 2em;
 }
 
 .subsla2{

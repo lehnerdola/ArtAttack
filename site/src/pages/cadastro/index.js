@@ -91,7 +91,7 @@ export default function Cad() {
 
               <p className='desc-txt'>Já tem conta?</p>
               <Link to='../login'>
-               <a className='mod' >Ir para login</a> 
+               <a className='mod1' >Ir para login</a> 
               </Link>
 
               </div>

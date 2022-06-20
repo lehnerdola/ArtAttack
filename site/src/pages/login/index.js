@@ -83,16 +83,15 @@ export default function Login() {
 
                     <Link to='../cadastro' >
                     <a href='' className='mod'>
-                    Cadastre-se
-                    </a> 
+                      Cadastre-se
+                        </a>
                     </Link>
                   
                     
                   </div>
-                  <div className='subb-1'>
-                  
-                    <img src='./images/Humaaans - Ui Sketch.png' className='img1'></img>
-                    </div>
+                  <div className='sub'>
+                  <img src='./images/Humaaans - Ui Sketch.png' className='imgpc'></img>
+                  </div>
                
         </main>
         </div>
