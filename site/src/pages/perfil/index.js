@@ -10,18 +10,7 @@ import { toast } from 'react-toastify';
 import Modal from 'react-modal';
 Modal.setAppElement("#root");
 
-
-
 export default function Perfil() {
-    const [modalIsOpen, setIsOpen] = useState(false);
-
-    function openModal() {
-        setIsOpen(true);
-    }
-
-    function closeModal() {
-        setIsOpen(false);
-    }
 
     const id = storage('usuario-logado').id
     const [perfil, setPerfil] = useState([]);
@@ -41,7 +30,6 @@ export default function Perfil() {
 						toast.success("🔥 Projeto " + nome + " removido!");
 					},
 				},
-
 				{
 					label: "Não",
 				},
@@ -87,7 +75,7 @@ export default function Perfil() {
 
                 {perfil.map(item =>
                     <div class="s1">
-                        <img src= './images/64572.png   ' className='imgusu' />
+                        <img src= {item.img} className='imgusu' />
                         <p className='txt-perfil'>@{item.nome}</p>
                         <p className='txt-perfil2'>{item.ocupacao}</p>
                         <p className='txt-perfil2'>{item.bio}</p>
