@@ -1,8 +1,8 @@
 .ma4{
     background-color: #fedfcb;
     padding: 0vh;
-    
-
+    height: 100%;
+    width: 100%;
 }
 
 .bot1-txt{
@@ -22,7 +22,6 @@
     width: 3em;
     border-radius: 30px;
     font-family: 'Attack-3';
-    margin-top: 1em;
     margin-left: 1em;
 }
 
@@ -48,7 +47,6 @@
     flex-direction: row;
     background-color: #fff;
     justify-content: space-around;
-    margin-left: 1em;
     width: 80em;
     border-radius: 20px;
 }

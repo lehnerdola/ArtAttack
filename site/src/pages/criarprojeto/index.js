@@ -80,15 +80,16 @@ export default function EnviarProjeto() {
     
 
     return(
-
+        
         <div className='ma4'>
-            <div class="btao1">
             <Link to='../perfil'>
             <a>
+            <div class="btao1">
+
                 <p class="bot1-txt">Voltar</p>
+                </div>
             </a>
             </Link>
-        </div>
     <nav class="cont-1">
         <h1 className='titulo-1-1'>CRIE SEU PROJETO</h1>
     </nav>

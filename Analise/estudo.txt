@@ -1,3 +1,6 @@
+--add imagem_usuario feed
+
+
 (1) cadastro -- feito
 /POST  /usuario/cadastro
 

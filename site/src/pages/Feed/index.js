@@ -7,7 +7,7 @@ import storage from 'local-storage'
 import { useNavigate } from 'react-router-dom';
 
 import { buscarProjetoPorNome, todosProjetos } from '../../api/projetoAPI.js'
-import { infoPerfil,todosPerfis } from '../../api/usuarioAPI';
+import { infoPerfil, todosPerfis } from '../../api/usuarioAPI';
 import { useEffect, useState } from 'react';
 
 
@@ -20,15 +20,15 @@ export default function Feed() {
     const userLogado = storage('usuario-logado').nome
 
     async function Filtrar() {
-		const resp = await buscarProjetoPorNome(filtro);
-		setProjetos(resp);
-	}
+        const resp = await buscarProjetoPorNome(filtro);
+        setProjetos(resp);
+    }
 
 
     async function carregarTodosProjetos() {
-		const resp = await todosProjetos();
-		setProjetos(resp);
-	}
+        const resp = await todosProjetos();
+        setProjetos(resp);
+    }
 
     async function perfilUsuarioInfo() {
         const resp = await todosPerfis();
@@ -50,15 +50,15 @@ export default function Feed() {
     }, [])
 
     useEffect(() => {
-		Filtrar();
-	}, [filtro]);
+        Filtrar();
+    }, [filtro]);
 
 
     useEffect(() => {
-		setTimeout(() => {
-			carregarTodosProjetos();
-		},)
-	}, []);
+        setTimeout(() => {
+            carregarTodosProjetos();
+        })
+    }, []);
 
     useEffect(() => {
         perfilUsuarioInfo();
@@ -70,10 +70,10 @@ export default function Feed() {
 
             <header className='container1'>
                 <div className='subsla4'>
-                <Link to="../perfil">
-                    <img src='./images/64572.png' className='imgperfil' />
-                </Link>
-                <p className='txt2'>@{userLogado}</p>
+                    <Link to="../perfil">
+                        <img src='./images/64572.png' className='imgperfil' />
+                    </Link>
+                    <p className='txt2'>@{userLogado}</p>
 
                 </div>
                 <div className='bo1'>
@@ -96,35 +96,37 @@ export default function Feed() {
             <main className='container4'>
 
 
-                {projetos.map (item =>
-                <div className='sub1'>
+                {projetos.map(item =>
+                    <div className='sub11'>
 
-<div className='subsla3'>
+                        <div className='subsla3'>
 
-<div className='subsla2'>
-<img src='./images/64572.png' className='imgusuario' >
-</img>
-</div>
-<p className='txt2-1' >{item.nome}</p>
+                            <div className='subsla2'>
+                                <img src='./images/64572.png' className='imgusuario' /> 
+                                
+                                {item.usuario}
+                            </div>
+                            <p className='txt2-1' >{item.nome}</p>
 
-                    <div key={item.id}>
-                        <div className='subsla'>
-                            <img src={`http://localhost:5000/${item.imagem}`} className='img0' />
-                            
-                            <p className='txt2'>Descrição:{item.descricao}</p>
-                            <p className='txt2'>Categoria:{item.categoria}</p>
-                            <p className='txt2'>Materiais:{item.materiais}</p>
-                            
+                            <div key={item.id}>
+                                <div className='subsla'>
+                                    <img src={`http://localhost:5000/${item.imagem}`} className='img0' />
+
+                                    <p className='txt2'>Descrição:{item.descricao}</p>
+                                    <p className='txt2'>Categoria:{item.categoria}</p>
+                                    <p className='txt2'>Materiais:{item.materiais}</p>
+
+                                </div>
+
+                            </div>
+
+
+
                         </div>
 
-                        </div>
-
-                           
-
+                        <hr />
                     </div>
-
-                </div>
-)}
+                )}
             </main>
 
         </div>

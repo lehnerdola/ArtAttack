@@ -20,13 +20,15 @@ export async function consultarProjetos(){
     const comando = 
     `
     SELECT id_projeto	id,
-        id_usuario      usuario,
+        nm_usuario      usuario,
+        img_perfil      imagem_usuario,
 	   nm_projeto		nome,
        ds_projeto		descricao,
        ds_categoria		categoria,
        ds_materiais		materiais,
        img_projeto      imagem
-  FROM tb_projeto;   
+  FROM tb_projeto 
+  JOIN tb_usuario ON tb_projeto.id_usuario = tb_usuario.id_usuario;   
     `;
     const [linhas] = await con.query(comando);
     return linhas;

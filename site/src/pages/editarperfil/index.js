@@ -33,7 +33,8 @@ export default function EditarPerfil() {
     async function salvarClickPerfil() {
         try {
             const alterar = await alterarPerfil(id, nome, ocupacao, bio, ctt);
-            const r = await enviarimagem (id, img)
+
+            //const r = await enviarimagem (id, img)
             
             alert('perfil alterado')
 
