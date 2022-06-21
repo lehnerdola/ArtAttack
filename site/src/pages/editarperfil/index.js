@@ -22,24 +22,24 @@ export default function EditarPerfil() {
 
     async function carregarPerfil() {
         const r = await infoPerfil(id);
-        
+
         console.log(r);
 
         setNome(r[0].nome);
         setOcupacao(r[0].ocupacao);
         setBio(r[0].bio);
         setCtt(r[0].ctt);
-        setImagem(r[0].imagem);
+        setImagem(r[0].imagem_usuario);
 
     }
 
     async function salvarClickPerfil() {
         try {
             const alterar = await alterarPerfil(id, nome, ocupacao, bio, ctt);
-            if(typeof(imagem) == 'object'){
-             await enviarimagem (id, imagem)
+            if (typeof (imagem) == 'object') {
+                await enviarimagem(id, imagem)
             }
-            
+
             toast.dark('Perfil alterado com sucesso!')
 
 
@@ -48,18 +48,18 @@ export default function EditarPerfil() {
         }
     }
 
-    function escolherimg (){
+    function escolherimg() {
         document.getElementById('img').click();
     }
 
-  function mostrarImagem(){
-    if(typeof (imagem) == 'object') {
-        return URL.createObjectURL(imagem);
-    }
-        else{
+    function mostrarImagem() {
+        if (typeof (imagem) == 'object') {
+            return URL.createObjectURL(imagem);
+        }
+        else {
             return buscarImagem(imagem);
         }
-  }
+    }
 
 
     return (
@@ -77,30 +77,30 @@ export default function EditarPerfil() {
             <section class="con1">
 
                 <div className='nsei'>
-                <div className='upload' onClick={escolherimg}>
-                    <input type='file' id='img' onChange={e => setImagem(e.target.files[0])}/>
-                    <form className='form'>
-                    <label for='form_input' className='form_label'>
+                    <div className='upload' onClick={escolherimg}>
+                        <input type='file' id='img' onChange={e => setImagem(e.target.files[0])} />
+                        <div className='form'>
+                            <label for='form_input' className='form_label'>
 
-                    {!imagem &&
-                        <img src="../images/addimagem.png" alt='' className='form_icon'/>
-                    }
+                                {!imagem &&
+                                    <img src="../images/addimagem.png" alt='' className='form_icon' />
+                                }
 
-                    {imagem &&
-                        <img className="img-projeto" src={mostrarImagem()} alt=''/>
-                    }
-                    <input type="file" id='form_input'className='form_input'/>
+                                {imagem &&
+                                    <img className="img-projeto" src={mostrarImagem()} alt='' />
+                                }
+                                {/* <input type="file" id='form_input' className='form_input' /> */}
 
-                        </label>
-                        </form>
+                            </label>
+                        </div>
                     </div>
-                    </div>
+                </div>
 
-                <div>
+                {/* <div>
                     <input type="file" id="Imagem" name="Imagem" accept="image/*" />
                     <script src="./editarperfil/script.js"></script>
 
-                </div>
+                </div> */}
 
 
 

@@ -27,6 +27,7 @@ export default function Feed() {
 
     async function carregarTodosProjetos() {
         const resp = await todosProjetos();
+        console.log(resp);
         setProjetos(resp);
     }
 

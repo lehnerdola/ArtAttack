@@ -13,6 +13,7 @@ server.use(cors());
 server.use(express.json());
 
 server.use('/storage/projetos', express.static('storage/projetos'))
+server.use('/storage/perfil', express.static('storage/perfil'))
 
 
 server.use(usuarioController);

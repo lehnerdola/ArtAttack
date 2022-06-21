@@ -44,6 +44,7 @@ export default function Perfil() {
 
     async function perfilUsuarioInfo() {
         const resp = await infoPerfil(id);
+        console.log(resp);
         setPerfil(resp)
     }
 
@@ -79,7 +80,7 @@ export default function Perfil() {
 
                 {perfil.map(item =>
                     <div class="s1">
-                        <img src= {`http://localhost:5000/${item.imagem_usuario}`}className='imgusu' />
+                        <img src= {`http://localhost:5000/${item.imagem_usuario}`} className='imgusu' />
                         <p className='txt-perfil'>@{item.nome}</p>
                         <p className='txt-perfil2'>{item.ocupacao}</p>
                         <p className='txt-perfil2'>{item.bio}</p>
