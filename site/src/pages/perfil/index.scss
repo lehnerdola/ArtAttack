@@ -90,7 +90,7 @@
 
 .s2{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
     margin-left: 2em;
@@ -106,9 +106,17 @@
     margin-top: 11em;
 }
 
+.hrtop{
+    border: 1px solid #4c73ff;
+    color: #4c73ff;
+    margin-bottom: 1em;
+}
+
 .s3{
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
+    margin-top: 1em;
     }
 
 .ca1{
@@ -129,8 +137,8 @@ background-color: #FAB98F;
 
 .c2{
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
     margin-left: 15em;
     background-color: #ffeaf2;

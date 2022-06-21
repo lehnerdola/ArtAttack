@@ -25,7 +25,7 @@ export async function login(email, senha) {
                 DS_OCUPACAO     ocupacao, 
                 DS_BIOGRAFIA    bio, 
                 DS_CONTATO      ctt, 
-                IMG_PERFIL      img
+                IMG_PERFIL      imagem_usuario
         FROM tb_usuario 
        WHERE id_usuario = ?
      `;
@@ -77,7 +77,7 @@ SELECT id_usuario       id,
         DS_OCUPACAO     ocupacao, 
         DS_BIOGRAFIA    bio, 
         DS_CONTATO      ctt ,
-        img_perfil   imagem
+        img_perfil   imagem_usuario
 FROM tb_usuario 
 WHERE id_usuario = ? 
     `;

@@ -6,8 +6,8 @@ import { Link } from 'react-router-dom';
 import storage from 'local-storage'
 import { useNavigate } from 'react-router-dom';
 
-import { buscarProjetoPorNome, todosProjetos } from '../../api/projetoAPI.js'
-import { infoPerfil, todosPerfis } from '../../api/usuarioAPI';
+import {buscarProjetoPorNome, todosProjetos } from '../../api/projetoAPI.js'
+import {todosPerfis } from '../../api/usuarioAPI';
 import { useEffect, useState } from 'react';
 
 
@@ -83,15 +83,16 @@ export default function Feed() {
 
             <nav className='container2'>
 
-                <div>
+                <div className='sub-1-1'>
                     <h2 className='txt1'>O MELHOR DO ART ATTACK</h2>
                     <h3 className='txt1'>CURADORIA DO ART ATTACK</h3>
-                </div>
 
                 <div>
                     <input  placeholder='Pesquisar todos os projetos' className='busca' Value={filtro} onChange={(e) => setFiltro(e.target.value)}></input>
                     <img src='./images/image_preview-removebg-preview.png' className='lupa' onClick={Filtrar}/>
                 </div>
+                </div>
+
             </nav>
 
             <main className='container4'>
@@ -105,7 +106,7 @@ export default function Feed() {
                             <div className='subsla2'>
                                 <img src={`http://localhost:5000/${item.imagem_usuario}`} className='imgusuario' /> 
                                 
-                                {item.usuario}
+                                <p className='txtusuario'>@{item.usuario}</p>
                             </div>
                             <p className='txt2-1' >{item.nome}</p>
 

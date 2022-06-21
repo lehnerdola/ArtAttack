@@ -42,6 +42,14 @@ server.post('/cadastro', async (req, resp) => {
 
         const fazerCad = await fazerCadastro(cadastro);
 
+        if(!cadastro.nmperfil)
+            throw new Error('Nome é obrigatório!')
+        if(!cadastro.email)
+            throw new Error('Email é obrigatório!')
+        if(!cadastro.senha)
+            throw new Error('Senha é obrigatória!')        
+        
+
         resp.send(fazerCad);
 
         if (!fazerCad) {
@@ -50,7 +58,7 @@ server.post('/cadastro', async (req, resp) => {
         
 
     } catch (err) {
-        resp.status(401).send({
+        resp.status(400).send({
             erro: err.message
         });
     }

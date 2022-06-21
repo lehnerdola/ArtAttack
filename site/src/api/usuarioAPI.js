@@ -11,6 +11,10 @@ export async function Logar(email, senha){
       return r.data;
       }
 
+      export function buscarImagem(imagem) {
+        return `${api.getUri()}/${imagem}`;
+    }      
+
 
 export async function infoPerfil(id) {
     const resposta = await api.get(`/perfil/${id}`);

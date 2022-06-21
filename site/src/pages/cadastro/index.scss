@@ -213,7 +213,6 @@ background: #F3F7F9;
   }
 
   .mod1{
-    box-sizing: border-box;
     border-radius: 25px;
     width: 140px;
     height: 90px;
@@ -227,11 +226,10 @@ background: #F3F7F9;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    margin-top: -15em;
-        }
+    margin-right: -13em;
+  }
 
         .mod1:hover{
-          box-sizing: border-box;
           border-radius: 25px;
           width: 140px;
           height: 90px;
@@ -240,25 +238,21 @@ background: #F3F7F9;
           padding: 0.4em 0.4em 0.4em 0.4em;
           margin: 8px 129px 5px;
           color: rgb(0, 0, 0);
+          margin-right: -13em;
           background: #f7f7f7;
           border: 1px solid #000000;
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
-          margin-top: -15em;
-
               }
 
               .desc-txt{
                 font-family: "attack8";
-                white-space: nowrap;
-                 overflow: hidden;
-          text-overflow: ellipsis;
                }   
                
                .subb1{
                 display: flex;
-                flex-direction: column;
+                flex-direction: row;
                 margin-left: 1em;
                 justify-content: flex-start;
                 margin-top: 1em;

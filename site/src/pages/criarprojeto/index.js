@@ -74,7 +74,7 @@ export default function EnviarProjeto() {
         }
         catch(err){
             if(err.response)
-            toast.dark(err.response.data.Erro)
+            toast.dark(err.response.data.erro)
             else{
                 toast.dark(err.message)
             }

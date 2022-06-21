@@ -79,7 +79,7 @@ export default function Perfil() {
 
                 {perfil.map(item =>
                     <div class="s1">
-                        <img src= {`http://localhost:5000/${item.img}`}className='imgusu' />
+                        <img src= {`http://localhost:5000/${item.imagem_usuario}`}className='imgusu' />
                         <p className='txt-perfil'>@{item.nome}</p>
                         <p className='txt-perfil2'>{item.ocupacao}</p>
                         <p className='txt-perfil2'>{item.bio}</p>
@@ -109,9 +109,10 @@ export default function Perfil() {
 
             
                 {projeto.map(item =>    
-                <div class="s3">
-                    <img src={`http://localhost:5000/${item.imagem}`} className="imagem" />
-                                 
+                <div className='s3'>
+                    <hr className='hrtop'/>
+
+                    <img src={`http://localhost:5000/${item.imagem}`} className="imagem" /> 
                                         <p className='txt2'>Título:{item.nome}</p>
                                         <p className='txt2'>Descrição: {item.descricao}</p>
                                         <p className='txt2'>Categoria: {item.categoria}</p>

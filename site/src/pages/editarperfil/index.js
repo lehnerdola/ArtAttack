@@ -1,7 +1,7 @@
 import './index.scss';
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { alterarPerfil, infoPerfil, enviarimagem } from '../../api/usuarioAPI';
+import { alterarPerfil, infoPerfil, enviarimagem, buscarImagem } from '../../api/usuarioAPI';
 import { toast } from 'react-toastify';
 import storage from 'local-storage'
 
@@ -11,7 +11,7 @@ export default function EditarPerfil() {
     const [ocupacao, setOcupacao] = useState('');
     const [bio, setBio] = useState('');
     const [ctt, setCtt] = useState('');
-    const [img, setImg] = useState();
+    const [imagem, setImagem] = useState();
     const id = storage('usuario-logado').id
 
 
@@ -29,13 +29,16 @@ export default function EditarPerfil() {
         setOcupacao(r[0].ocupacao);
         setBio(r[0].bio);
         setCtt(r[0].ctt);
+        setImagem(r[0].imagem);
+
     }
 
     async function salvarClickPerfil() {
         try {
             const alterar = await alterarPerfil(id, nome, ocupacao, bio, ctt);
-
-            const r = await enviarimagem (id, img)
+            if(typeof(imagem) == 'object'){
+             await enviarimagem (id, imagem)
+            }
             
             toast.dark('Perfil alterado com sucesso!')
 
@@ -50,7 +53,12 @@ export default function EditarPerfil() {
     }
 
   function mostrarImagem(){
-        return URL.createObjectURL(img);
+    if(typeof (imagem) == 'object') {
+        return URL.createObjectURL(imagem);
+    }
+        else{
+            return buscarImagem(imagem);
+        }
   }
 
 
@@ -70,15 +78,15 @@ export default function EditarPerfil() {
 
                 <div className='nsei'>
                 <div className='upload' onClick={escolherimg}>
-                    <input type='file' id='img' onChange={e => setImg(e.target.files[0])}/>
+                    <input type='file' id='img' onChange={e => setImagem(e.target.files[0])}/>
                     <form className='form'>
                     <label for='form_input' className='form_label'>
 
-                    {!img &&
+                    {!imagem &&
                         <img src="../images/addimagem.png" alt='' className='form_icon'/>
                     }
 
-                    {img &&
+                    {imagem &&
                         <img className="img-projeto" src={mostrarImagem()} alt=''/>
                     }
                     <input type="file" id='form_input'className='form_input'/>

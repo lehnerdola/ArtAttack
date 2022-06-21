@@ -11,6 +11,15 @@ server.post('/projeto', async (req, resp) =>{
     try {
         const projetoQueVaiInserir = req.body;
 
+        if(!projetoQueVaiInserir.nome)
+        throw new Error('Escolha um nome para a sua obra!')
+        if(!projetoQueVaiInserir.descricao)
+        throw new Error('Insira uma descrição para a sua obra!')
+        if(!projetoQueVaiInserir.categoria)
+        throw new Error('Insira uma categoria para a sua obra!')
+        if(!projetoQueVaiInserir.materiais)
+        throw new Error('Insira o(s) material(is) utilizado(s) na sua obra!')
+
         const projeto = await InserirProjeto(projetoQueVaiInserir);
 
         resp.send(projeto);

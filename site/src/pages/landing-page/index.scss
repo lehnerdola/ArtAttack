@@ -101,9 +101,7 @@
     border-radius: 50px;
     height: 8em;
   margin-left: -20em;
-  animation: go-back 1s; 
-
-
+  animation: fadeinout 4s linear forwards;
   }
   
   .sub-6-3{
@@ -117,6 +115,8 @@
     height: 8em;
     border-radius: 50px;
   margin-left: -20em;
+  animation: fadeinout 4s linear forwards;
+
 
   }
   
@@ -380,16 +380,22 @@
   .img3{
     width: 7em;
     margin-left: 3em;
+    animation: float 5s ease-in-out infinite;
+    transform: translateY(0px);
   }
   
   .img4{
     width: 9em;
     margin-left: -3em;
-
+    animation: float 5s ease-in-out infinite;
+    transform: translateY(0px);
   }
 
   .img5{
     width: 9em;
+    animation: float 5s ease-in-out infinite;
+    transform: translateY(0px);
+
   }
 
   .card-2{
@@ -430,6 +436,26 @@
   
   h1{
     font-family: 'Attack-2';
+  }
+
+  //animação
+
+  @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+
+  
+  @keyframes fadeinout {
+    100%,0% { opacity: 0; }
+    100% { opacity: 1; }
   }
   
 @media screen and (min-width: 300px) and (max-width: 480px) {

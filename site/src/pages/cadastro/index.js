@@ -17,16 +17,7 @@ export default function Cad() {
   
   async function salvarClick() {
     try {
-      if(!nmperfil)
-          throw new Error('Escolha um nome de usúario!')
-
-          if(!email)
-          throw new Error('Insira um email!')
-      
-          if(!senha)
-          throw new Error('Insira uma senha!')  
       const r = await CadUsuario(nmperfil,email,senha, ocupacao,bio, ctt);
-
       toast.dark('usuario cadastrado!')
     } catch (err) {
       if(err.response)
