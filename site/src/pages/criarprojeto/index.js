@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
 import {useEffect} from 'react'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 
 import storage from 'local-storage'
 
-import { AlterarProjeto, CriarProjeto, enviarimagem } from '../../api/projetoAPI';
+import { AlterarProjeto, CriarProjeto, enviarimagem, buscarPorId, buscarImagem } from '../../api/projetoAPI';
 
 
 
@@ -25,12 +25,30 @@ export default function EnviarProjeto() {
     const [descricao, setDescricao] = useState('');
     const [categoria, setCategoria] = useState('');
     const [materiais,setMateriais] = useState('');
-    const [img, setImg] = useState();
+    const [imagem, setImagem] = useState();
     const [id, setId] = useState(0);
+
+    const { idParam } = useParams();
+
+    useEffect(() => {
+        if(idParam){
+            CarregarProjeto();
+        }
+    }, [])
+
+    async function CarregarProjeto(){
+        const resposta = await buscarPorId(idParam);
+        setNome(resposta[0].nome);
+        setDescricao(resposta[0].descricao);
+        setCategoria(resposta[0].categoria);
+        setMateriais(resposta[0].materiais);
+        setId(resposta.id);
+        setImagem(resposta[0].imagem);
+    }
 
     async function SalvarClick(){
         try{
-            if(!img) throw new Error('Escolha a imagem do Post')
+            if(!imagem) throw new Error('Escolha a imagem do Post')
 
             const usuario = storage('usuario-logado').id;
             console.log(usuario)
@@ -38,16 +56,19 @@ export default function EnviarProjeto() {
             if(id === 0){ 
 
             const NovoPost = await CriarProjeto(nome, descricao, categoria, materiais, usuario)
-            const r = await enviarimagem (NovoPost.id, img)
+            await enviarimagem (NovoPost.id, imagem)
             toast.dark("O projeto foi cadastrado ")
 
             setId(NovoPost.id);
             }
 
             else{
-                const NovoPost = await AlterarProjeto(id,nome, descricao, categoria, materiais, usuario)
-                const r = await enviarimagem(id, img)
-                toast.dark("O projeto foi cadastrado")
+              await AlterarProjeto(idParam,nome, descricao, categoria, materiais, usuario)
+              if(typeof(imagem) == 'object'){
+              await enviarimagem(idParam, imagem);
+            }
+
+                toast.dark("O projeto foi alterado")
             }
           
         }
@@ -65,7 +86,12 @@ export default function EnviarProjeto() {
     }
 
   function mostrarImagem(){
-        return URL.createObjectURL(img);
+        if(typeof (imagem) == 'object') {
+        return URL.createObjectURL(imagem);
+    }
+        else{
+            return buscarImagem(imagem);
+        }
   }
 
 
@@ -129,15 +155,15 @@ export default function EnviarProjeto() {
             <aside class="subcont-2">
                 
                     <div className='upload' onClick={escolherimg}>
-                    <input type='file' id='img' onChange={e => setImg(e.target.files[0])}/>
+                    <input type='file' id='img' onChange={e => setImagem(e.target.files[0])}/>
                     <form className='form'>
                     <label for='form_input' className='form_label'>
 
-                    {!img &&
+                    {!imagem &&
                         <img src="../images/addimagem.png" alt='' className='form_icon'/>
                     }
 
-                    {img &&
+                    {imagem &&
                         <img className="img-projeto" src={mostrarImagem()} alt=''/>
                     }
                     <input type="file" id='form_input'className='form_input'/>
@@ -146,7 +172,7 @@ export default function EnviarProjeto() {
                         </form>
                     </div>
             </aside>
-            <button onClick={SalvarClick} className='btpj'> Salvar </button>
+            <button onClick={SalvarClick} className='btpj'> {id === 0 ? 'Salvar' : 'Alterar'} </button>
             <button onClick={NovoClick} className='btnv'> Novo </button>
             </div>
 

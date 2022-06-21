@@ -47,6 +47,7 @@ server.post('/cadastro', async (req, resp) => {
         if (!fazerCad) {
             throw new Error('Credenciais inválidas');
         }
+        
 
     } catch (err) {
         resp.status(401).send({

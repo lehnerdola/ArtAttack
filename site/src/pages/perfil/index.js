@@ -8,7 +8,6 @@ import { useState, useEffect } from 'react';
 import { confirmAlert } from "react-confirm-alert";
 import { toast } from 'react-toastify';
 import Modal from 'react-modal';
-Modal.setAppElement("#root");
 
 export default function Perfil() {
 
@@ -16,6 +15,11 @@ export default function Perfil() {
     const [perfil, setPerfil] = useState([]);
     const [projeto, setProjeto] = useState([]);
     const navigate = useNavigate();
+
+    function editarProjeto(id){
+        navigate(`/alterar/${id}`)
+  }
+
 
     async function deletarProjeto(id, nome) {
 		confirmAlert({
@@ -75,7 +79,7 @@ export default function Perfil() {
 
                 {perfil.map(item =>
                     <div class="s1">
-                        <img src= {item.img} className='imgusu' />
+                        <img src= {`http://localhost:5000/${item.img}`} className='imgusu' />
                         <p className='txt-perfil'>@{item.nome}</p>
                         <p className='txt-perfil2'>{item.ocupacao}</p>
                         <p className='txt-perfil2'>{item.bio}</p>
@@ -113,7 +117,7 @@ export default function Perfil() {
                                         <p className='txt2'>Categoria: {item.categoria}</p>
                                         <p className='txt2'>Materiais: {item.materiais}</p>
                     <button className='b-3-2' onClick={() => deletarProjeto(item.id, item.nome)}>Remover</button>
-                    <button className='b-3-1'>Alterar</button>
+                    <button className='b-3-1' onClick={() => editarProjeto(item.id)  }>Alterar</button>
 
 
                 </div>

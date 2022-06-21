@@ -28,6 +28,11 @@ export async function buscarProjetoPorNome(nome) {
     return resposta.data; 
 }
 
+export async function buscarPorId(id){
+    const resposta =  await api.get(`/projeto/${id}`);
+    return resposta.data 
+}
+
 export async function CriarProjeto(nome, descricao, categoria, materiais, usuario){
     const r = await api.post('/projeto',{
      usuario: usuario,
@@ -53,7 +58,7 @@ export async function enviarimagem (id, imagem){
 }
 
 export async function AlterarProjeto(id, nome,  descricao, categoria, materiais, usuario){
-    const respota = await api.put(`/alterar${id}`, {
+    const respota = await api.put(`/alterar/${id}`, {
      usuario: usuario,
      nome: nome,
      descricao: descricao,

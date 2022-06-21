@@ -1,6 +1,7 @@
 import './index.scss';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import { toast } from 'react-toastify';
 
 import {CadUsuario} from '../../api/usuarioAPI'
 
@@ -16,11 +17,20 @@ export default function Cad() {
   
   async function salvarClick() {
     try {
+      if(!nmperfil)
+          throw new Error('Escolha um nome de usúario!')
+
+          if(!email)
+          throw new Error('Insira um email!')
+      
+          if(!senha)
+          throw new Error('Insira uma senha!')  
       const r = await CadUsuario(nmperfil,email,senha, ocupacao,bio, ctt);
 
-      alert('usuario cadastrado!')
+      toast.dark('usuario cadastrado!')
     } catch (err) {
-      alert(err.message)
+      if(err.response)
+      toast.error(err.response.data.erro);
     }
   }
 

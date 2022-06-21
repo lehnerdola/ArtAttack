@@ -2,6 +2,7 @@ import './index.scss';
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { alterarPerfil, infoPerfil, enviarimagem } from '../../api/usuarioAPI';
+import { toast } from 'react-toastify';
 import storage from 'local-storage'
 
 export default function EditarPerfil() {
@@ -34,9 +35,9 @@ export default function EditarPerfil() {
         try {
             const alterar = await alterarPerfil(id, nome, ocupacao, bio, ctt);
 
-            //const r = await enviarimagem (id, img)
+            const r = await enviarimagem (id, img)
             
-            alert('perfil alterado')
+            toast.dark('Perfil alterado com sucesso!')
 
 
         } catch (err) {

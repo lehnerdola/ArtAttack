@@ -12,7 +12,6 @@ const server = express();
 server.use(cors());
 server.use(express.json());
 
-//liberar arquivos storage
 server.use('/storage/projetos', express.static('storage/projetos'))
 
 

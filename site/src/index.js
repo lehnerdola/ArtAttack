@@ -24,7 +24,7 @@ root.render(
     <ToastContainer/>
     <BrowserRouter>
       <Routes>
-          <Route path='/'             element={<App />} />
+          <Route path='/'             element={<LandingPage />} />
 
           <Route path='/Feed'        element={<Feed />} />
           <Route path='/cadastro'     element={<Cadastro />} />
@@ -34,6 +34,7 @@ root.render(
           <Route path='/alterarperfil/:id' element={<Perfil />} /> 
           <Route path='/editarperfil' element={<EditarPerfil/>} />
           <Route path='/criarprojeto' element={<Projeto/>} />
+          <Route path='/alterar/:idParam' element={<Projeto/>} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
