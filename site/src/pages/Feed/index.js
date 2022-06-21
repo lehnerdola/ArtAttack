@@ -71,7 +71,7 @@ export default function Feed() {
             <header className='container1'>
                 <div className='subsla4'>
                     <Link to="../perfil">
-                        <img src='./images/64572.png' className='imgperfil' />
+                        <img src={'./images/64572.png'} className='imgperfil' />
                     </Link>
                     <p className='txt2'>@{userLogado}</p>
 
@@ -89,7 +89,8 @@ export default function Feed() {
                 </div>
 
                 <div>
-                    <input type='search' placeholder='Pesquisar todos os projetos' className='busca' Value={filtro} onChange={(e) => setFiltro(e.target.value)}></input>
+                    <input  placeholder='Pesquisar todos os projetos' className='busca' Value={filtro} onChange={(e) => setFiltro(e.target.value)}></input>
+                    <img src='./images/image_preview-removebg-preview.png' className='lupa' onClick={Filtrar}/>
                 </div>
             </nav>
 
@@ -102,7 +103,7 @@ export default function Feed() {
                         <div className='subsla3'>
 
                             <div className='subsla2'>
-                                <img src='./images/64572.png' className='imgusuario' /> 
+                                <img src={`http://localhost:5000/${item.imagem_usuario}`} className='imgusuario' /> 
                                 
                                 {item.usuario}
                             </div>
