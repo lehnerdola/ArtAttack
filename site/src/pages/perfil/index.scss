@@ -19,6 +19,7 @@
     font-weight: 500;
 }
 
+
 .s1{
     display: flex;
     flex-direction: column;
@@ -88,15 +89,6 @@
     
 }
 
-.s2{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    margin-left: 2em;
-    width: 100em;
-    margin-top: 50e;
-}
 
 .s2{
     display: flex;
@@ -104,6 +96,15 @@
     justify-content: start;
     align-items: center;
     margin-top: 11em;
+}
+
+.botoes :hover{
+        transform: scale(1.05);
+
+}
+
+.botoes{
+                                              
 }
 
 .hrtop{
@@ -137,10 +138,12 @@ background-color: #FAB98F;
 
 .c2{
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    width: 70%;
+    flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    margin-left: 15em;
+    margin-left: 20em;
     background-color: #ffeaf2;
 }
 
@@ -162,6 +165,7 @@ background-color: #FAB98F;
     border: none;
     background-color: #DEC3B1;
     color: black;
+    cursor: pointer;
     font-family: 'attack11';
     font-weight: bold;
 }
@@ -171,6 +175,7 @@ background-color: #FAB98F;
     padding: 0.8em;
     border-radius: 5px;
     margin-left: 14.5em;
+    cursor: pointer;
     margin-top: 1em;
     border: none;
     background-color: #DEC3B1;

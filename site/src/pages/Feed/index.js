@@ -7,7 +7,7 @@ import storage from 'local-storage'
 import { useNavigate } from 'react-router-dom';
 
 import {buscarProjetoPorNome, todosProjetos } from '../../api/projetoAPI.js'
-import {todosPerfis } from '../../api/usuarioAPI';
+import {todosPerfis, infoPerfil } from '../../api/usuarioAPI';
 import { useEffect, useState } from 'react';
 
 
@@ -33,6 +33,11 @@ export default function Feed() {
 
     async function perfilUsuarioInfo() {
         const resp = await todosPerfis();
+        setPerfil(resp)
+    }
+
+    async function perfilUsuarioInfoId() {
+        const resp = await infoPerfil(id);
         setPerfil(resp)
     }
 
@@ -65,14 +70,19 @@ export default function Feed() {
         perfilUsuarioInfo();
     }, [])
 
+    useEffect(() => {
+        perfilUsuarioInfoId();
+    }, [])
+
     return (
 
         <div className='ma'>
 
+            {perfil.map (item =>
             <header className='container1'>
                 <div className='subsla4'>
                     <Link to="../perfil">
-                        <img src={'./images/64572.png'} className='imgperfil' />
+                        <img src={`http://localhost:5000/${item.imagem_usuario}`} className='imgperfil' />
                     </Link>
                     <p className='txt2'>@{userLogado}</p>
 
@@ -81,7 +91,7 @@ export default function Feed() {
                     <button className='b1-txt' onClick={sairClick}> Sair </button>
                 </div>
             </header>
-
+)}
             <nav className='container2'>
 
                 <div className='sub-1-1'>

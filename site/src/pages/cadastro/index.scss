@@ -33,7 +33,13 @@
 
   .img1{
       margin-left: 60em;
-      width: 15em;
+      width: 30em;
+  }
+
+  .img11{
+    margin-top: -100em;
+    margin-left: 50em;
+    width: 20em;
   }
   
   a.links{
@@ -44,9 +50,23 @@
     margin-top: 2em;
   }
 
+  .subimg{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 3em;
+  }
+
+  .txt-img{
+    font-weight: bolder;
+    font-family: 'attack4';
+  }
+
   .content{
     width: 500px;
-    
+    display: flex;
+    flex-direction: row;
     position: relative; 
   }
   .content-1{

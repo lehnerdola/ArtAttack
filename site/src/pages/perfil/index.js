@@ -7,7 +7,6 @@ import { listarMeusProjetos, removerProjeto } from '../../api/projetoAPI';
 import { useState, useEffect } from 'react';
 import { confirmAlert } from "react-confirm-alert";
 import { toast } from 'react-toastify';
-import Modal from 'react-modal';
 
 export default function Perfil() {
 
@@ -99,7 +98,9 @@ export default function Perfil() {
                 <div class="s2">
                     <a className='b-4' >PROJETOS</a>
                     <Link to="../criarprojeto">
-                        <a class='b-22'>CRIAR PROJETO</a>
+                        <div className='b-22-1'>
+                        <a className='b-22'>CRIAR PROJETO</a>
+                        </div>
                     </Link>
                 </div>
             </nav>
@@ -120,7 +121,6 @@ export default function Perfil() {
                                         <p className='txt2'>Materiais: {item.materiais}</p>
                     <button className='b-3-2' onClick={() => deletarProjeto(item.id, item.nome)}>Remover</button>
                     <button className='b-3-1' onClick={() => editarProjeto(item.id)  }>Alterar</button>
-
 
                 </div>
 )}

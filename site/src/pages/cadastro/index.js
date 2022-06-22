@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
 
-import {CadUsuario} from '../../api/usuarioAPI'
+import {CadUsuario, enviarimagem, buscarImagem} from '../../api/usuarioAPI'
 
 
 export default function Cad() {
@@ -13,17 +13,37 @@ export default function Cad() {
   const [ocupacao, setOcupacao] = useState('');
   const [bio, setBio] = useState('');
   const [ctt, setCtt] = useState('');
+  const [imagem, setImagem] = useState();
+  const [id, setId] = useState(0);
+
 
   
   async function salvarClick() {
     try {
       const r = await CadUsuario(nmperfil,email,senha, ocupacao,bio, ctt);
+        await enviarimagem(r.id, imagem)
+
+      setId(r.id)  
       toast.dark('usuario cadastrado!')
     } catch (err) {
       if(err.response)
       toast.error(err.response.data.erro);
     }
   }
+
+  function escolherimg() {
+    document.getElementById('img').click();
+}
+
+function mostrarImagem() {
+    if (typeof (imagem) == 'object') {
+        return URL.createObjectURL(imagem);
+    }
+    else {
+        return buscarImagem(imagem);
+    }
+}
+
 
     return(
     
@@ -84,10 +104,30 @@ export default function Cad() {
           </p>
 
 
+        <div className='subimg'>
+        <p className='txt-img'>Insira uma imagem de perfil</p> 
+          <div className='upload' onClick={escolherimg}>
+                    <input type='file' id='img' onChange={e => setImagem(e.target.files[0])}/>
+          <form className='form'>
+                    <label for='form_input' className='form_label'>
+
+                    {!imagem &&
+                        <img src="../images/addimagem.png" alt='' className='form_icon'/>
+                    }
+
+                    {imagem &&
+                        <img className="img-projeto" src={mostrarImagem()} alt=''/>
+                    }
+
+                        </label>
+                        </form>
+                        </div>
+                  </div>
              <p> 
                <button onClick={salvarClick} className="cadastrar">Cadastrar</button> 
              </p>
 
+             
               <div className='subb1' >
 
               <p className='desc-txt'>Já tem conta?</p>
@@ -95,12 +135,14 @@ export default function Cad() {
                <a className='mod1' >Ir para login</a> 
               </Link>
 
+
+
               </div>
-              <img src='./images/Humaaans - Ui Sketch.png' className='img1'></img>
+              <img src='./images/Humaaans - Ui Sketch.png' className='img11'></img>
    </main>
    </div>
    </div>
-        
+
     </div>
     )
 }

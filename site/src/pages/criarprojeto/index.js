@@ -166,7 +166,6 @@ export default function EnviarProjeto() {
                     {imagem &&
                         <img className="img-projeto" src={mostrarImagem()} alt=''/>
                     }
-                    <input type="file" id='form_input'className='form_input'/>
 
                         </label>
                         </form>

@@ -40,18 +40,23 @@
   
 .container4{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     margin-top: 5em;
     justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
 }
 
+.imgperfil:hover{
+    transform: scale(1.05);
+}
 
 .sub11{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     padding: 1em;
+    
 }
 
 
@@ -162,6 +167,7 @@ background-color: #f8e8ee;
 
 .imgperfil{
     width: 3em;
+    transition: transform .7s;
     border-radius: 30px;
 }
 
