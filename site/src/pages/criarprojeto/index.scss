@@ -72,6 +72,10 @@
 
 }
 
+.ladinho{
+    display: flex;
+    flex-direction: row;
+}
 
 .textocont{
     text-align: center;
@@ -92,6 +96,7 @@
     border: none;
     padding: 1em;
     width: 10em;
+    transition: all .4s ease-in-out;
     border-radius: 30px;
     font-family: 'attack11';
     color: #fff;
@@ -101,9 +106,14 @@
     margin-inline-end: 3em;
 }
 
+.btpj, .btnv{
+    transform: scale(1.1);
+}
+
 .btnv{
     background-color: #6586ff;
     border: none;
+    transition: all .4s ease-in-out;
     padding: 1em;
     width: 10em;
     border-radius: 30px;

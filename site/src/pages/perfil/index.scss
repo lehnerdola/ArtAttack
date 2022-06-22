@@ -53,6 +53,7 @@
 
 .imgusu{
     width: 5em;
+    height: 5em;
     border-radius: 50px;
     margin-top: -1em;
 }
@@ -98,14 +99,14 @@
     margin-top: 11em;
 }
 
-.botoes :hover{
-        transform: scale(1.05);
-
+.b-22-1{
+transition: all .4s ease-in-out;
 }
 
-.botoes{
-                                              
+.b-22-1:hover{
+    transform: scale(1.1); 
 }
+
 
 .hrtop{
     border: 1px solid #4c73ff;

@@ -89,19 +89,13 @@ export default function EditarPerfil() {
                                 {imagem &&
                                     <img className="img-projeto" src={mostrarImagem()} alt='' />
                                 }
-                                {/* <input type="file" id='form_input' className='form_input' /> */}
 
                             </label>
                         </div>
                     </div>
                 </div>
 
-                {/* <div>
-                    <input type="file" id="Imagem" name="Imagem" accept="image/*" />
-                    <script src="./editarperfil/script.js"></script>
-
-                </div> */}
-
+         
 
 
                 <div class="desc">
@@ -126,7 +120,9 @@ export default function EditarPerfil() {
                             <input type='text' placeholder='ex: número, email ou úsuario de outras redes' className='inpdec' value={ctt} onChange={e => setCtt(e.target.value)} />
                         </p>
 
+                        <div className='b-22-1'>
                         <button className='inpbt' onClick={salvarClickPerfil}>Salvar</button>
+                        </div>        
                     </div>
                 </div>
 

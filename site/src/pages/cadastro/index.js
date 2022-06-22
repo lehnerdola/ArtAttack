@@ -20,6 +20,7 @@ export default function Cad() {
   
   async function salvarClick() {
     try {
+      if(!imagem) throw new Error('Escolha a imagem do Perfil')
       const r = await CadUsuario(nmperfil,email,senha, ocupacao,bio, ctt);
         await enviarimagem(r.id, imagem)
 

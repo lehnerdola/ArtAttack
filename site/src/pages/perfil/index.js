@@ -85,9 +85,14 @@ export default function Perfil() {
                         <p className='txt-perfil2'>{item.bio}</p>
                         <p className='txt-perfil2'>{item.ctt}</p>
                         <Link to="../editarperfil">
+                        <div className='b-22-1'> 
+
                             <a className='b-5'>
+
                                 <p className='txt2'>Editar perfil</p>
                             </a>
+                            </div>
+
                         </Link>
                     </div>
 
@@ -119,8 +124,12 @@ export default function Perfil() {
                                         <p className='txt2'>Descrição: {item.descricao}</p>
                                         <p className='txt2'>Categoria: {item.categoria}</p>
                                         <p className='txt2'>Materiais: {item.materiais}</p>
+                    <div className='b-22-1'>                    
                     <button className='b-3-2' onClick={() => deletarProjeto(item.id, item.nome)}>Remover</button>
+                    </div>
+                    <div className='b-22-1'> 
                     <button className='b-3-1' onClick={() => editarProjeto(item.id)  }>Alterar</button>
+                    </div>
 
                 </div>
 )}

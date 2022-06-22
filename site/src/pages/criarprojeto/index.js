@@ -57,7 +57,8 @@ export default function EnviarProjeto() {
 
             const NovoPost = await CriarProjeto(nome, descricao, categoria, materiais, usuario)
             await enviarimagem (NovoPost.id, imagem)
-            toast.dark("O projeto foi cadastrado ")
+            toast.dark("O projeto foi criado! 👨‍🎨")
+            navigate("/Perfil");
 
             setId(NovoPost.id);
             }
@@ -68,7 +69,7 @@ export default function EnviarProjeto() {
               await enviarimagem(idParam, imagem);
             }
 
-                toast.dark("O projeto foi alterado")
+                toast.dark("O projeto foi alterado! 🖌")
             }
           
         }
@@ -171,10 +172,18 @@ export default function EnviarProjeto() {
                         </form>
                     </div>
             </aside>
+
+            <div className='ladinho'>
+            <div className='b-22-1'>            
             <button onClick={SalvarClick} className='btpj'> {id === 0 ? 'Salvar' : 'Alterar'} </button>
-            <button onClick={NovoClick} className='btnv'> Novo </button>
             </div>
 
+            <div className='b-22-1'>            
+            <button onClick={NovoClick} className='btnv'> Novo </button>
+            </div>
+            </div>
+
+            </div>
     </main>
         </div>
 
